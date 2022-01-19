@@ -25,9 +25,9 @@ module test_VGA(
 	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
-    output wire [3:0] VGA_R,	// 4-bit VGA red output
-    output wire [3:0] VGA_G,  // 4-bit VGA green output
-    output wire [3:0] VGA_B,  // 4-bit VGA blue output
+    output wire VGA_R,	// 4-bit VGA red output
+    output wire VGA_G,  // 4-bit VGA green output
+    output wire VGA_B,  // 4-bit VGA blue output
     output wire clkout,  
  	
 	// input/output
@@ -39,11 +39,11 @@ module test_VGA(
 );
 
 // TAMAÑO DE visualización 
-parameter CAM_SCREEN_X = 160;
-parameter CAM_SCREEN_Y = 120;
+parameter CAM_SCREEN_X = 265;
+parameter CAM_SCREEN_Y = 265;
 
-localparam AW = 15; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
-localparam DW = 12;
+localparam AW = 17; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam DW = 3; //Numero de bits RGB
 
 // El color es RGB 444
 localparam RED_VGA =   12'b111100000000;
@@ -74,9 +74,9 @@ wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
 por lo tanto, los bits menos significactivos deben ser cero
 **************************************************************************** */
-	assign VGA_R = data_RGB444[11:8];
-	assign VGA_G = data_RGB444[7:4];
-	assign VGA_B = data_RGB444[3:0];
+	assign VGA_R = data_RGB444[2];
+	assign VGA_G = data_RGB444[1];
+	assign VGA_B = data_RGB444[0];
 
 
 
