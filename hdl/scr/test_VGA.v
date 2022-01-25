@@ -39,16 +39,16 @@ module test_VGA(
 );
 
 // TAMAÑO DE visualización 
-parameter CAM_SCREEN_X = 265;
-parameter CAM_SCREEN_Y = 265;
+parameter CAM_SCREEN_X = 256;
+parameter CAM_SCREEN_Y = 256;
 
-localparam AW = 17; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam AW = 16; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
 localparam DW = 3; //Numero de bits RGB
 
-// El color es RGB 444
-localparam RED_VGA =   12'b111100000000;
-localparam GREEN_VGA = 12'b000011110000;
-localparam BLUE_VGA =  12'b000000001111;
+// El color es RGB 111
+localparam RED_VGA =   3'b100;
+localparam GREEN_VGA = 3'b010;
+localparam BLUE_VGA =  3'b001;
 
 
 // Clk 
@@ -149,7 +149,7 @@ always @ (VGA_posX, VGA_posY) begin
 		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
 			DP_RAM_addr_out=19212;
 		else
-			DP_RAM_addr_out=VGA_posX+VGA_posY*CAM_SCREEN_Y;
+			DP_RAM_addr_out=VGA_posX;
 end
 
 
@@ -157,15 +157,5 @@ end
 
 /*****************************************************************************
 
-este bloque debe crear un nuevo archivo 
-**************************************************************************** */
- FSM_game  juego(
-	 	.clk(clk25M),
-		.rst(rst),
-		.in1(btnr),
-		.in2(btnr),
-		.mem_px_addr(DP_RAM_addr_in),
-		.mem_px_data(DP_RAM_data_in),
-		.px_wr(DP_RAM_regW)
-   );
+
 endmodule
