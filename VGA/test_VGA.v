@@ -54,7 +54,7 @@ localparam BLUE_VGA =  3'b001;
 // Clk 
 wire clk50M;
 
-wire clk25M;
+wire clk75M;
 
 // Conexión dual por ram
 
@@ -66,7 +66,7 @@ reg  [AW-1: 0] DP_RAM_addr_out;
 	
 // Conexión VGA Driver
 wire [DW-1:0]data_mem;	   // Salida de dp_ram al driver VGA
-wire [DW-1:0]data_RGB444;  // salida del driver VGA al puerto
+wire [DW-1:0]data_RGB111;  // salida del driver VGA al puerto
 wire [9:0]VGA_posX;		   // Determinar la pos de memoria que viene del VGA
 wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 
@@ -75,39 +75,38 @@ wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
 por lo tanto, los bits menos significactivos deben ser cero
 **************************************************************************** */
-	assign VGA_R = data_RGB444[2];
-	assign VGA_G = data_RGB444[1];
-	assign VGA_B = data_RGB444[0];
+	assign VGA_R = data_RGB111[2];
+	assign VGA_G = data_RGB111[1];
+	assign VGA_B = data_RGB111[0];
 
 
 
 
 assign clk50M=clk;
-clock clk25(
-	.areset(rst),
+clock75 clk75(	
 	.inclk0(clk50M),
-	.c0(clk25M)
+	.c0(clk75M)
 	
 );
 
 
 
 //assign clk25M=clk;
-assign clkout=clk25M;
+assign clkout=clk75M;
 
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
 Se debe configurar AW  según los calculos realizados en el Wp01
-se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 332
+se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 111
 **************************************************************************** */
 buffer_ram_dp #( AW,DW,"C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
 	DP_RAM(  
-	.clk_w(clk25M), 
+	.clk_w(clk75M), 
 	.addr_in(DP_RAM_addr_in), 
 	.data_in(DP_RAM_data_in),
 	.regwrite(DP_RAM_regW), 
 	
-	.clk_r(clk25M), 
+	.clk_r(clk75M), 
 	.addr_out(DP_RAM_addr_out),
 	.data_out(data_mem)
 	);
@@ -116,13 +115,13 @@ buffer_ram_dp #( AW,DW,"C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
-VGA_Driver640x480 VGA640x480
+VGA_Driver1024x768 VGA1024x768
 (
 	.rst(rst),
-	.clk(clk25M), 				// 25MHz  para 60 hz de 640x480
-	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 444 
-//	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 444 
-	.pixelOut(data_RGB444), // salida del valor pixel a la VGA 
+	.clk(clk75M), 				// 25MHz  para 60 hz de 640x480
+	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 111 
+//	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 111 
+	.pixelOut(data_RGB111), // salida del valor pixel a la VGA 
 	.Hsync_n(VGA_Hsync_n),	// señal de sincronizaciÓn en horizontal negada
 	.Vsync_n(VGA_Vsync_n),	// señal de sincronizaciÓn en vertical negada 
 	.posX(VGA_posX), 			// posición en horizontal del pixel siguiente
@@ -143,9 +142,6 @@ always @ (VGA_posX, VGA_posY) begin
 		else
 			DP_RAM_addr_out=VGA_posX;
 end
-
-
-//assign DP_RAM_addr_out=10000;
 
 
 

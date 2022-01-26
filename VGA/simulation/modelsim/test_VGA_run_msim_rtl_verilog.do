@@ -8,6 +8,8 @@ vmap work rtl_work
 vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v}
 vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v}
 vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v}
+vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/clock75.v}
+vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v}
 
 vlog -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA {C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA_TB.v}
 

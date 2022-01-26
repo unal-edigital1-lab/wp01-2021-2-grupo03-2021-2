@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/simulation/modelsim
 vbuffer_ram_dp
-Z1 !s110 1643149071
+Z1 !s110 1643236895
 !i10b 1
 !s100 5V5dj<71>gkb[IMijk7Wj2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,26 +26,74 @@ Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1643149071.000000
+Z5 !s108 1643236895.000000
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v|
 !i113 1
 Z6 o-vlog01compat -work work
 Z7 !s92 -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA
 Z8 tCvgOpt 0
+vclock75
+Z9 !s110 1643236896
+!i10b 1
+!s100 4Wb7n`>:Z6`Vk=`IG^da?0
+R2
+I4HB8NXOf2a4M71e2@d@Nm2
+R3
+R0
+w1643236631
+8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/clock75.v
+FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/clock75.v
+!i122 3
+L0 40 110
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/clock75.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/clock75.v|
+!i113 1
+R6
+R7
+R8
+vclock75_altpll
+R9
+!i10b 1
+!s100 8PeRO30GFW4]1A^ZP2OH12
+R2
+I8OXX=Vel`nlUzB77bm?:m3
+R3
+R0
+w1643236868
+8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v
+FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v
+!i122 4
+L0 30 63
+R4
+r1
+!s85 0
+31
+Z10 !s108 1643236896.000000
+!s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db
+R8
 vtest_VGA
 R1
 !i10b 1
-!s100 SgbO[JYdMh4a;GZTJK6i_1
+!s100 k1I873koc3Q5NDXi=I`Q>3
 R2
-IQ8LK=4D[EcVo31WE]_Y?k1
+I8ZAcZ[KFZSEhXYl8]S]jY0
 R3
 R0
-w1643145345
+w1643236832
 8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v
 FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v
 !i122 2
-L0 21 132
+L0 21 129
 R4
 r1
 !s85 0
@@ -59,23 +107,23 @@ R7
 R8
 ntest_@v@g@a
 vtest_VGA_TB
-R1
+R9
 !i10b 1
-!s100 EK7HUoeUYe^R9ViLb=j;k1
+!s100 gJmV<O1]Sz7AFo8aidXlL2
 R2
-I32<Z[3@FMI`?6D@2Cn;mE1
+IQV1m6]U5Y4j05E3@iT6>[3
 R3
 R0
-w1643148273
+w1643149716
 8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA_TB.v
 FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA_TB.v
-!i122 3
-L0 22 76
+!i122 5
+L0 22 73
 R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA_TB.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA_TB.v|
 !i113 1
@@ -83,15 +131,15 @@ R6
 R7
 R8
 ntest_@v@g@a_@t@b
-vVGA_Driver640x480
-R1
+vVGA_Driver1024x768
+!s110 1643236894
 !i10b 1
-!s100 [QCQPbWKh>]cb=E20z=:<3
+!s100 C?IWNEfd3Q:P99Jdc]GW[3
 R2
-I;zzjU?NN9?cl1F=Q@U<Ke2
+IK=i:cUkH6H2<_<jjAQUQG2
 R3
 R0
-w1642606162
+w1643236840
 8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v
 FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v
 !i122 0
@@ -100,11 +148,11 @@ R4
 r1
 !s85 0
 31
-!s108 1643149070.000000
+!s108 1643236894.000000
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v|
 !i113 1
 R6
 R7
 R8
-n@v@g@a_@driver640x480
+n@v@g@a_@driver1024x768
