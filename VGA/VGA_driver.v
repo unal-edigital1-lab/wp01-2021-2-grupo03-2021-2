@@ -22,8 +22,8 @@ module VGA_Driver1024x768 (
 	output  [11:0] pixelOut, // salida del valor pixel a la VGA 
 	output  Hsync_n,		// seÃ±al de sincronizaciÃ³n en horizontal negada
 	output  Vsync_n,		// seÃ±al de sincronizaciÃ³n en vertical negada 
-	output  [9:0] posX, 	// posicion en horizontal del pixel siguiente
-	output  [8:0] posY 		// posicion en vertical  del pixel siguiente
+	output  [11:0] posX, 	// posicion en horizontal del pixel siguiente
+	output  [10:0] posY 		// posicion en vertical  del pixel siguiente
 );
 
 localparam SCREEN_X = 1024; 	// tamaño de la pantalla visible en horizontal 
@@ -40,8 +40,8 @@ localparam BACK_PORCH_Y = 29;
 localparam TOTAL_SCREEN_Y = SCREEN_Y+FRONT_PORCH_Y+SYNC_PULSE_Y+BACK_PORCH_Y; 	// total pixel pantalla en Vertical 
 
 
-reg  [9:0] countX;
-reg  [8:0] countY;
+reg  [11:0] countX;
+reg  [10:0] countY;
 
 assign posX    = countX;
 assign posY    = countY;

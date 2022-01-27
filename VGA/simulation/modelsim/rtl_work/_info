@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/simulation/modelsim
 vbuffer_ram_dp
-Z1 !s110 1643236895
+Z1 !s110 1643249276
 !i10b 1
 !s100 5V5dj<71>gkb[IMijk7Wj2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1643236895.000000
+Z5 !s108 1643249276.000000
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v|
 !i113 1
@@ -34,7 +34,7 @@ Z6 o-vlog01compat -work work
 Z7 !s92 -vlog01compat -work work +incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA
 Z8 tCvgOpt 0
 vclock75
-Z9 !s110 1643236896
+R1
 !i10b 1
 !s100 4Wb7n`>:Z6`Vk=`IG^da?0
 R2
@@ -58,7 +58,7 @@ R6
 R7
 R8
 vclock75_altpll
-R9
+Z9 !s110 1643249277
 !i10b 1
 !s100 8PeRO30GFW4]1A^ZP2OH12
 R2
@@ -74,7 +74,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1643236896.000000
+Z10 !s108 1643249277.000000
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v|
 !i113 1
@@ -84,12 +84,12 @@ R8
 vtest_VGA
 R1
 !i10b 1
-!s100 k1I873koc3Q5NDXi=I`Q>3
+!s100 UDCYo3ZOhET>kX=?6a8Gz0
 R2
-I8ZAcZ[KFZSEhXYl8]S]jY0
+I@mU=i@Ynce?BFa<n>EPaI2
 R3
 R0
-w1643236832
+w1643249266
 8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v
 FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v
 !i122 2
@@ -132,14 +132,14 @@ R7
 R8
 ntest_@v@g@a_@t@b
 vVGA_Driver1024x768
-!s110 1643236894
+!s110 1643249275
 !i10b 1
-!s100 C?IWNEfd3Q:P99Jdc]GW[3
+!s100 :KeIRW1n`=44oPTBc]h8X1
 R2
-IK=i:cUkH6H2<_<jjAQUQG2
+IeoD3fj3:6H[==M@h6lO8e3
 R3
 R0
-w1643236840
+w1643249075
 8C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v
 FC:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v
 !i122 0
@@ -148,7 +148,7 @@ R4
 r1
 !s85 0
 31
-!s108 1643236894.000000
+!s108 1643249275.000000
 !s107 C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Digital/wp01-2021-2-grupo03-2021-2/VGA|C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/VGA_driver.v|
 !i113 1
