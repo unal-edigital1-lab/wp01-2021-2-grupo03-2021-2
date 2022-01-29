@@ -79,9 +79,6 @@ por lo tanto, los bits menos significactivos deben ser cero
 	assign VGA_G = data_RGB111[1];
 	assign VGA_B = data_RGB111[0];
 
-
-
-
 assign clk50M=clk;
 clock75 clk75(	
 	.inclk0(clk50M),
@@ -89,17 +86,17 @@ clock75 clk75(
 	
 );
 
-
-
-//assign clk25M=clk;
-assign clkout=clk75M;
+divisor_de_frecuencia(
+	.clk(clk75M),
+	.clk_out(clkout)
+);
 
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
 Se debe configurar AW  según los calculos realizados en el Wp01
 se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 111
 **************************************************************************** */
-buffer_ram_dp #( AW,DW,"C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
+buffer_ram_dp #( AW,DW,"C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
 	DP_RAM(  
 	.clk_w(clk75M), 
 	.addr_in(DP_RAM_addr_in), 
@@ -117,7 +114,7 @@ VGA_Driver640x480
 **************************************************************************** */
 VGA_Driver1024x768 VGA1024x768
 (
-	.rst(rst),
+	.rst(~rst),
 	.clk(clk75M), 				// 25MHz  para 60 hz de 640x480
 	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 111 
 //	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 111 

@@ -2,7 +2,7 @@
 # Lab05 - Proyecto- Prueba Buffer Memoria y test VGA
 
 * Ana Isabella Goyeneche Fonseca 1.192.793.310
-* Diego Andrés Quintero Rois
+* Diego Andrés Quintero Rois 1.003.243.161
 * Oscar Santiago Suarez Aguilar 1.003.822.596
 
 ## Preguntas Introductorias.
@@ -50,5 +50,6 @@ Ahora, como no existen pixeles decimales y teniendo en cuenta que 256 es potenci
 
                                 *Se define  width = height = 256 pixeles* 
 
-
+# Video Demostrativo
+Se adjunta link del video donde se puede evidenciar el correcto funcionamiento del proyecto, demostrando que se hace envío de información y reset de la misma: https://youtu.be/CAzSEY2RYaQ
 

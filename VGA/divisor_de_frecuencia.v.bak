@@ -1,0 +1,27 @@
+module Divisor_de_Frecuencia(
+	//Entradas
+	input clk,
+	
+	//Salidas
+	output reg led
+);
+
+localparam f_0 = 50000000; //Se asume lo que dice el datasheet: 50MHz
+localparam f_out = 1; //frecuencia de salida
+localparam max = f_0/(2*f_out); //Máximo valor del contador
+reg [25:0] count; //Contador
+
+initial begin
+	count=0;
+	led=0;
+end
+
+always @(posedge clk) begin
+	if(count==max)begin
+		led=~led;
+		count=0;
+	end else begin
+		count=count+1;
+	end
+end
+endmodule
