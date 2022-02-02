@@ -23,7 +23,7 @@ module test_VGA(
     input wire rst,         	// reset button
 
 	// VGA input/output  
-	 
+	 input wire [2:0] switch,
     output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire VGA_R,	// 4-bit VGA red output
@@ -40,8 +40,8 @@ module test_VGA(
 );
 
 // TAMAÑO DE visualización 
-parameter CAM_SCREEN_X = 1920;
-parameter CAM_SCREEN_Y = 1080;
+parameter CAM_SCREEN_X = 1024;
+parameter CAM_SCREEN_Y = 768;
 
 localparam AW = 8; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
 localparam DW = 3; //Numero de bits RGB
@@ -136,10 +136,11 @@ adicionales seran iguales al color del último pixel de memoria
 **************************************************************************** */
 
 always @ (VGA_posX, VGA_posY) begin
-		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
-			DP_RAM_addr_out=0;
-		else
-			DP_RAM_addr_out=3'b100;
+	case (switch)
+		3'b000: DP_RAM_addr_out=3'b100;  
+		3'b001: DP_RAM_addr_out=3'b010; 
+		3'b010: DP_RAM_addr_out=3'b001; 
+			
 end
 
 

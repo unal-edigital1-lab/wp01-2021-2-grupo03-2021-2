@@ -26,14 +26,14 @@ module VGA_Driver1024x768 (
 	output  [11:0] posY 		// posicion en vertical  del pixel siguiente
 );
 
-localparam SCREEN_X = 1920; 	// tamaño de la pantalla visible en horizontal 
+localparam SCREEN_X = 1024; 	// tamaño de la pantalla visible en horizontal 
 localparam FRONT_PORCH_X =24;  
 localparam SYNC_PULSE_X = 136;
 localparam BACK_PORCH_X = 144;
 localparam TOTAL_SCREEN_X = SCREEN_X+FRONT_PORCH_X+SYNC_PULSE_X+BACK_PORCH_X; 	// total pixel pantalla en horizontal 
 
 
-localparam SCREEN_Y = 768; 	// tamaño de la pantalla visible en Vertical 
+localparam SCREEN_Y = 768s; 	// tamaño de la pantalla visible en Vertical 
 localparam FRONT_PORCH_Y =3;  
 localparam SYNC_PULSE_Y = 6;
 localparam BACK_PORCH_Y = 29;
