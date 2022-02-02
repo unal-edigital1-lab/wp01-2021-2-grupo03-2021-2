@@ -23,6 +23,7 @@ module test_VGA(
     input wire rst,         	// reset button
 
 	// VGA input/output  
+	 
     output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire VGA_R,	// 4-bit VGA red output
@@ -39,8 +40,8 @@ module test_VGA(
 );
 
 // TAMAÑO DE visualización 
-parameter CAM_SCREEN_X = 256;
-parameter CAM_SCREEN_Y = 256;
+parameter CAM_SCREEN_X = 1920;
+parameter CAM_SCREEN_Y = 1080;
 
 localparam AW = 8; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
 localparam DW = 3; //Numero de bits RGB
@@ -68,7 +69,7 @@ reg  [AW-1: 0] DP_RAM_addr_out;
 wire [DW-1:0]data_mem;	   // Salida de dp_ram al driver VGA
 wire [DW-1:0]data_RGB111;  // salida del driver VGA al puerto
 wire [11:0]VGA_posX;		   // Determinar la pos de memoria que viene del VGA
-wire [10:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
+wire [11:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 
 
 /* ****************************************************************************
@@ -80,6 +81,7 @@ por lo tanto, los bits menos significactivos deben ser cero
 	assign VGA_B = data_RGB111[0];
 
 assign clk50M=clk;
+
 clock75 clk75(	
 	.inclk0(clk50M),
 	.c0(clk75M)
@@ -137,7 +139,7 @@ always @ (VGA_posX, VGA_posY) begin
 		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
 			DP_RAM_addr_out=0;
 		else
-			DP_RAM_addr_out=VGA_posX;
+			DP_RAM_addr_out=3'b100;
 end
 
 
