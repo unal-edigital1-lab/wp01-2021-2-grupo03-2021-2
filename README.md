@@ -50,6 +50,33 @@ Ahora, como no existen pixeles decimales y teniendo en cuenta que 256 es potenci
 
                                 *Se define  width = height = 256 pixeles* 
 
+
+
+
+# VGA driver.
+Parte muy importante del laboratorio consistió en adecuar el software de acuerdo al hardware disponible, tras conseguir un monitor VGA se procedió a revisar el código VGA_driver y actualizar que sus parámetros de forma adecuada de acuerdo a la pantalla adquirida teniendo en cuenta que la misma por referencia correspondía a una de 15 pulgadas TFT LCD visualización 0.297 mm, Dot pitch 1024 x 768 @ 60 Hz, con Máxima resolución
+30 – 61 kHz frecuencia de 56 – 76 Hz vertical y frecuencia horizontal de contraste de 450: 1.
+
+Por lo tanto, los cambios reflejados en éste archivo corresponden a la actualización teniendo usando como fuente de consulta la página http://tinyvga.com/vga-timing/1024x768@70Hz tal como fue indicado. 
+
+# Archivo fuente para almacenamiento de información.
+En el top del proyecto test_VGA se encuentra la instanciación del buffer ram que almacena la representación de pixeles que como grupo decidimos pintar y que obtiene a partir del archivo "image.men". La estrategia de la escritura de éste corresponde al deseo del deseo de dibujar lineas verticales en la pantalla las cuales de izquierda a derecha van, cambiando su color RGB progresivamente y repetetivamente así:
+
+RGB
+000 --> Negro
+001 --> Azul
+010 --> Verde
+011 --> Cian
+100 --> Rojo
+101 --> Violeta
+110 --> Amarillo
+111 --> Blanco
+
+La anterior secuencia se contruyó repetitivamente en una representación de 256 líneas, ésto corresponde a que como se planeó pintar lineas no era necesario extenderse en dicha pixel a pixel, si no, mas bien desde la lógica de pixel empleada en la instanciación redirigir la lectura a los valores ya explicados. Vale la pena mencionar que por facilidad la construcción del archivo se hizo en excel y desde ahí se exportó a su forma final que se puede encontrar en la carpeta fuente.
+
+# Dificultades y superación de las mismas.
+
+
 # Video Demostrativo
 Se adjunta link del video donde se puede evidenciar el correcto funcionamiento del proyecto, demostrando que se hace envío de información y reset de la misma: https://youtu.be/CAzSEY2RYaQ
 
