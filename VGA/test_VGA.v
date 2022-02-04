@@ -134,13 +134,28 @@ LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
 adicionales seran iguales al color del último pixel de memoria 
 **************************************************************************** */
+reg [AW-1:0] countx;
+reg [AW-1:0] county;
+
+localparam px_scale = 32;
+localparam width = CAM_SCREEN_X/px_scale;
+localparam height = CAM_SCREEN_Y/px_scale;
 
 always @ (VGA_posX, VGA_posY) begin
-	case (switch)
+
+	if(VGA_posX % 32 == 32-1) 
+		countx = countx>=32 ? 0 : countx + 1;
+		
+	if(VGA_posY % px_scale == px_scale-1) 
+		county = county>=height ? 0 : county + 1;
+	
+	DP_RAM_addr_out = countx;
+	
+	/*case (switch)	
 		3'b000: DP_RAM_addr_out=3'b100;  
 		3'b001: DP_RAM_addr_out=3'b010; 
 		3'b010: DP_RAM_addr_out=3'b001; 
-			
+	endcase*/
 end
 
 

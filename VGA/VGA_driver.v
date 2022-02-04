@@ -33,7 +33,7 @@ localparam BACK_PORCH_X = 144;
 localparam TOTAL_SCREEN_X = SCREEN_X+FRONT_PORCH_X+SYNC_PULSE_X+BACK_PORCH_X; 	// total pixel pantalla en horizontal 
 
 
-localparam SCREEN_Y = 768s; 	// tamaño de la pantalla visible en Vertical 
+localparam SCREEN_Y = 768; 	// tamaño de la pantalla visible en Vertical 
 localparam FRONT_PORCH_Y =3;  
 localparam SYNC_PULSE_Y = 6;
 localparam BACK_PORCH_Y = 29;
