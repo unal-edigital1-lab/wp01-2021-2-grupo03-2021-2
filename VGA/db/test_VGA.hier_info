@@ -4,12 +4,12 @@ rst => _.IN1
 switch[0] => ~NO_FANOUT~
 switch[1] => ~NO_FANOUT~
 switch[2] => ~NO_FANOUT~
-VGA_Hsync_n << VGA_Driver1024x768:VGA1024x768.Hsync_n
-VGA_Vsync_n << VGA_Driver1024x768:VGA1024x768.Vsync_n
-VGA_R << VGA_Driver1024x768:VGA1024x768.pixelOut
-VGA_G << VGA_Driver1024x768:VGA1024x768.pixelOut
-VGA_B << VGA_Driver1024x768:VGA1024x768.pixelOut
-clkout << divisor_de_frecuencia:comb_7.clk_out
+VGA_Hsync_n <= VGA_Driver1024x768:VGA1024x768.Hsync_n
+VGA_Vsync_n <= VGA_Driver1024x768:VGA1024x768.Vsync_n
+VGA_R <= VGA_Driver1024x768:VGA1024x768.pixelOut
+VGA_G <= VGA_Driver1024x768:VGA1024x768.pixelOut
+VGA_B <= VGA_Driver1024x768:VGA1024x768.pixelOut
+clkout <= divisor_de_frecuencia:comb_7.clk_out
 bntr => ~NO_FANOUT~
 bntl => ~NO_FANOUT~
 

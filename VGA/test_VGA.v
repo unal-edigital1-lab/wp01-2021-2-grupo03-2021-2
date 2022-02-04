@@ -134,24 +134,37 @@ LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
 adicionales seran iguales al color del último pixel de memoria 
 **************************************************************************** */
-reg [AW-1:0] countx;
-reg [AW-1:0] county;
+reg [AW-1:0] countX;
+reg [AW-1:0] countY;
 
-localparam px_scale = 32;
+localparam px_scale = 64;
 localparam width = CAM_SCREEN_X/px_scale;
 localparam height = CAM_SCREEN_Y/px_scale;
 
 always @ (VGA_posX, VGA_posY) begin
-
-	if(VGA_posX % 32 == 32-1) 
-		countx = countx>=32 ? 0 : countx + 1;
+	
+	if (countX >= width) begin
+		countX = 0;
+		if (countY >= height) begin
+			countY = 0;
+		end 
+		else begin
+			countY = (VGA_posY % px_scale == px_scale-1) ? countY : countY + 1;
+		end
+	end 
+	else begin
+		countX = (VGA_posX % px_scale == (px_scale-1)) ? countX : countX + 1;
+	end
+	
+	/*if(VGA_posX % px_scale == px_scale-1) 
+		countx = countx>=width ? 0 : countx + 1;// condición ? V : F ;
 		
 	if(VGA_posY % px_scale == px_scale-1) 
-		county = county>=height ? 0 : county + 1;
+		county = county>=height ? 0 : county + 1;*/
 	
-	DP_RAM_addr_out = countx;
+	DP_RAM_addr_out = countY;
 	
-	/*case (switch)	
+	/*case (switch)
 		3'b000: DP_RAM_addr_out=3'b100;  
 		3'b001: DP_RAM_addr_out=3'b010; 
 		3'b010: DP_RAM_addr_out=3'b001; 
