@@ -3,20 +3,20 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'switch[0]'
-Slack : -7.825
-TNS   : -58.415
+Slack : -7.515
+TNS   : -57.862
 
 Type  : Slow 1200mV 85C Model Setup 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -6.182
-TNS   : -17.438
+Slack : -5.834
+TNS   : -16.604
 
 Type  : Slow 1200mV 85C Model Setup 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
 Slack : -1.371
 TNS   : -8.545
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -1.200
-TNS   : -1.200
+Slack : -1.321
+TNS   : -1.321
 
 Type  : Slow 1200mV 85C Model Hold 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
 Slack : 0.453
@@ -27,11 +27,11 @@ Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.492
+Slack : 0.491
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'switch[0]'
-Slack : 0.513
+Slack : 0.899
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'switch[0]'
@@ -43,7 +43,7 @@ Slack : -1.487
 TNS   : -14.870
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 6.368
+Slack : 6.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -51,35 +51,35 @@ Slack : 9.783
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'switch[0]'
-Slack : -7.493
-TNS   : -56.186
+Slack : -7.287
+TNS   : -56.127
 
 Type  : Slow 1200mV 0C Model Setup 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -5.705
-TNS   : -15.809
-
-Type  : Slow 1200mV 0C Model Setup 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
-Slack : -1.140
-TNS   : -6.927
+Slack : -5.358
+TNS   : -15.025
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -1.107
-TNS   : -1.107
+Slack : -1.238
+TNS   : -1.238
 
-Type  : Slow 1200mV 0C Model Hold 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
-Slack : 0.401
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Setup 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
+Slack : -1.138
+TNS   : -6.911
 
 Type  : Slow 1200mV 0C Model Hold 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.401
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.454
+Slack : 0.457
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'switch[0]'
-Slack : 0.470
+Slack : 0.840
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'switch[0]'
@@ -91,43 +91,43 @@ Slack : -1.487
 TNS   : -14.870
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 6.338
+Slack : 6.336
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : 9.773
+Slack : 9.774
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'switch[0]'
-Slack : -3.200
-TNS   : -24.445
+Slack : -3.028
+TNS   : -23.410
 
 Type  : Fast 1200mV 0C Model Setup 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.944
-TNS   : -8.477
+Slack : -2.776
+TNS   : -8.119
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.308
-TNS   : -0.308
+Slack : -0.412
+TNS   : -0.412
 
 Type  : Fast 1200mV 0C Model Setup 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
 Slack : -0.022
 TNS   : -0.040
 
-Type  : Fast 1200mV 0C Model Hold 'switch[0]'
-Slack : 0.115
+Type  : Fast 1200mV 0C Model Hold 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk75|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.186
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out'
 Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'switch[0]'
+Slack : 0.378
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'switch[0]'

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_VGA
-Sat Feb  5 13:34:15 2022
+Sat Feb  5 15:15:19 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -65,13 +65,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb  5 13:34:15 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb  5 15:15:19 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 210                                         ;
-;     Total combinational functions  ; 210                                         ;
+; Total logic elements               ; 211                                         ;
+;     Total combinational functions  ; 211                                         ;
 ;     Dedicated logic registers      ; 88                                          ;
 ; Total registers                    ; 88                                          ;
 ; Total pins                         ; 13                                          ;
@@ -211,7 +211,7 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                              ;         ;
 ; altdpram.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                            ;         ;
 ; db/altsyncram_n4m1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/altsyncram_n4m1.tdf                          ;         ;
-; db/test_vga.ram0_buffer_ram_dp_882e8226.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/test_vga.ram0_buffer_ram_dp_882e8226.hdl.mif ;         ;
+; db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif ;         ;
 ; lpm_mult.tdf                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mult.tdf                                            ;         ;
 ; lpm_add_sub.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                         ;         ;
 ; multcore.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/multcore.inc                                            ;         ;
@@ -226,16 +226,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 210                                                                                  ;
+; Estimated Total logic elements              ; 211                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 210                                                                                  ;
+; Total combinational functions               ; 211                                                                                  ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
 ;     -- 4 input functions                    ; 55                                                                                   ;
-;     -- 3 input functions                    ; 47                                                                                   ;
+;     -- 3 input functions                    ; 48                                                                                   ;
 ;     -- <=2 input functions                  ; 108                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 115                                                                                  ;
+;     -- normal mode                          ; 116                                                                                  ;
 ;     -- arithmetic mode                      ; 95                                                                                   ;
 ;                                             ;                                                                                      ;
 ; Total registers                             ; 88                                                                                   ;
@@ -252,7 +252,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 55                                                                                   ;
-; Total fan-out                               ; 890                                                                                  ;
+; Total fan-out                               ; 893                                                                                  ;
 ; Average fan-out                             ; 2.71                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
@@ -262,9 +262,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Entity Name           ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+-----------------------+--------------+
-; |test_VGA                                 ; 210 (38)            ; 88 (0)                    ; 768         ; 0            ; 0       ; 0         ; 13   ; 0            ; |test_VGA                                                                          ; test_VGA              ; work         ;
-;    |FSM_game:Game|                        ; 53 (10)             ; 37 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|FSM_game:Game                                                            ; FSM_game              ; work         ;
-;       |divisor_de_frecuencia:GameClk|     ; 43 (43)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|FSM_game:Game|divisor_de_frecuencia:GameClk                              ; divisor_de_frecuencia ; work         ;
+; |test_VGA                                 ; 211 (38)            ; 88 (0)                    ; 768         ; 0            ; 0       ; 0         ; 13   ; 0            ; |test_VGA                                                                          ; test_VGA              ; work         ;
+;    |FSM_game:Game|                        ; 54 (10)             ; 37 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|FSM_game:Game                                                            ; FSM_game              ; work         ;
+;       |divisor_de_frecuencia:GameClk|     ; 44 (44)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|FSM_game:Game|divisor_de_frecuencia:GameClk                              ; divisor_de_frecuencia ; work         ;
 ;    |VGA_Driver1024x768:VGA1024x768|       ; 41 (41)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|VGA_Driver1024x768:VGA1024x768                                           ; VGA_Driver1024x768    ; work         ;
 ;    |buffer_ram_dp:DP_RAM|                 ; 0 (0)               ; 0 (0)                     ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM                                                     ; buffer_ram_dp         ; work         ;
 ;       |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0                                ; altsyncram            ; work         ;
@@ -804,7 +804,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value    ; Type                                                         ;
 +----------------+----------+--------------------------------------------------------------+
 ; in_f           ; 50000000 ; Signed Integer                                               ;
-; out_f          ; 100      ; Signed Integer                                               ;
+; out_f          ; 10       ; Signed Integer                                               ;
 +----------------+----------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1003,21 +1003,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 12                          ;
 ;     SLD               ; 12                          ;
 ;     plain             ; 56                          ;
-; cycloneiii_lcell_comb ; 210                         ;
+; cycloneiii_lcell_comb ; 211                         ;
 ;     arith             ; 95                          ;
 ;         2 data inputs ; 81                          ;
 ;         3 data inputs ; 14                          ;
-;     normal            ; 115                         ;
+;     normal            ; 116                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 20                          ;
-;         3 data inputs ; 33                          ;
+;         3 data inputs ; 34                          ;
 ;         4 data inputs ; 55                          ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 3                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.10                        ;
-; Average LUT depth     ; 3.71                        ;
+; Average LUT depth     ; 3.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1036,7 +1036,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sat Feb  5 13:34:03 2022
+    Info: Processing started: Sat Feb  5 15:15:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_VGA -c test_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1195,6 +1195,8 @@ Info (12133): Instantiated megafunction "buffer_ram_dp:DP_RAM|altsyncram:ram_rtl
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_n4m1.tdf
     Info (12023): Found entity 1: altsyncram_n4m1 File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/altsyncram_n4m1.tdf Line: 28
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 178
 Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 178
     Info (12134): Parameter "LPM_WIDTHA" = "4"
@@ -1236,17 +1238,17 @@ Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/output_files/test_VGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 228 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 229 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 211 logic cells
+    Info (21061): Implemented 212 logic cells
     Info (21064): Implemented 3 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4771 megabytes
-    Info: Processing ended: Sat Feb  5 13:34:15 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Sat Feb  5 15:15:19 2022
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

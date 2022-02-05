@@ -1,5 +1,5 @@
 Fitter report for test_VGA
-Sat Feb  5 13:34:21 2022
+Sat Feb  5 15:15:25 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -72,15 +72,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Feb  5 13:34:21 2022       ;
+; Fitter Status                      ; Successful - Sat Feb  5 15:15:25 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 212 / 6,272 ( 3 % )                         ;
-;     Total combinational functions  ; 210 / 6,272 ( 3 % )                         ;
+; Total logic elements               ; 213 / 6,272 ( 3 % )                         ;
+;     Total combinational functions  ; 211 / 6,272 ( 3 % )                         ;
 ;     Dedicated logic registers      ; 88 / 6,272 ( 1 % )                          ;
 ; Total registers                    ; 88                                          ;
 ; Total pins                         ; 13 / 92 ( 14 % )                            ;
@@ -158,12 +158,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
+;     Processor 2            ;   1.3%      ;
 +----------------------------+-------------+
 
 
@@ -173,8 +173,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 342 ) ; 0.00 % ( 0 / 342 )         ; 0.00 % ( 0 / 342 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 342 ) ; 0.00 % ( 0 / 342 )         ; 0.00 % ( 0 / 342 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 343 ) ; 0.00 % ( 0 / 343 )         ; 0.00 % ( 0 / 343 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 343 ) ; 0.00 % ( 0 / 343 )         ; 0.00 % ( 0 / 343 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -197,7 +197,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 330 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 331 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 12 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -213,19 +213,19 @@ The pin-out file can be found in C:/Users/diego/Documents/GitHub/wp01-2021-2-gru
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 212 / 6,272 ( 3 % )     ;
-;     -- Combinational with no register       ; 124                     ;
+; Total logic elements                        ; 213 / 6,272 ( 3 % )     ;
+;     -- Combinational with no register       ; 125                     ;
 ;     -- Register only                        ; 2                       ;
 ;     -- Combinational with a register        ; 86                      ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
 ;     -- 4 input functions                    ; 55                      ;
-;     -- 3 input functions                    ; 47                      ;
+;     -- 3 input functions                    ; 48                      ;
 ;     -- <=2 input functions                  ; 108                     ;
 ;     -- Register only                        ; 2                       ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 115                     ;
+;     -- normal mode                          ; 116                     ;
 ;     -- arithmetic mode                      ; 95                      ;
 ;                                             ;                         ;
 ; Total registers*                            ; 88 / 6,684 ( 1 % )      ;
@@ -250,11 +250,11 @@ The pin-out file can be found in C:/Users/diego/Documents/GitHub/wp01-2021-2-gru
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 1.2% / 1.2% / 1.3%      ;
-; Peak interconnect usage (total/H/V)         ; 4.9% / 4.7% / 5.2%      ;
+; Average interconnect usage (total/H/V)      ; 1.2% / 1.2% / 1.2%      ;
+; Peak interconnect usage (total/H/V)         ; 3.1% / 3.5% / 2.6%      ;
 ; Maximum fan-out                             ; 52                      ;
 ; Highest non-global fan-out                  ; 24                      ;
-; Total fan-out                               ; 863                     ;
+; Total fan-out                               ; 866                     ;
 ; Average fan-out                             ; 2.52                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -268,19 +268,19 @@ The pin-out file can be found in C:/Users/diego/Documents/GitHub/wp01-2021-2-gru
 +---------------------------------------------+--------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                ; Low                            ;
 ;                                             ;                    ;                                ;
-; Total logic elements                        ; 212 / 6272 ( 3 % ) ; 0 / 6272 ( 0 % )               ;
-;     -- Combinational with no register       ; 124                ; 0                              ;
+; Total logic elements                        ; 213 / 6272 ( 3 % ) ; 0 / 6272 ( 0 % )               ;
+;     -- Combinational with no register       ; 125                ; 0                              ;
 ;     -- Register only                        ; 2                  ; 0                              ;
 ;     -- Combinational with a register        ; 86                 ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic element usage by number of LUT inputs ;                    ;                                ;
 ;     -- 4 input functions                    ; 55                 ; 0                              ;
-;     -- 3 input functions                    ; 47                 ; 0                              ;
+;     -- 3 input functions                    ; 48                 ; 0                              ;
 ;     -- <=2 input functions                  ; 108                ; 0                              ;
 ;     -- Register only                        ; 2                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic elements by mode                      ;                    ;                                ;
-;     -- normal mode                          ; 115                ; 0                              ;
+;     -- normal mode                          ; 116                ; 0                              ;
 ;     -- arithmetic mode                      ; 95                 ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Total registers                             ; 88                 ; 0                              ;
@@ -305,7 +305,7 @@ The pin-out file can be found in C:/Users/diego/Documents/GitHub/wp01-2021-2-gru
 ;     -- Registered Output Connections        ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Internal Connections                        ;                    ;                                ;
-;     -- Total Connections                    ; 858                ; 60                             ;
+;     -- Total Connections                    ; 861                ; 60                             ;
 ;     -- Registered Connections               ; 279                ; 0                              ;
 ;                                             ;                    ;                                ;
 ; External Connections                        ;                    ;                                ;
@@ -630,9 +630,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                ; Entity Name           ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------+-----------------------+--------------+
-; |test_VGA                                 ; 212 (38)    ; 88 (0)                    ; 0 (0)         ; 768         ; 1    ; 0            ; 0       ; 0         ; 13   ; 0            ; 124 (38)     ; 2 (0)             ; 86 (0)           ; |test_VGA                                                                          ; test_VGA              ; work         ;
-;    |FSM_game:Game|                        ; 55 (11)     ; 37 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (1)       ; 2 (1)             ; 35 (9)           ; |test_VGA|FSM_game:Game                                                            ; FSM_game              ; work         ;
-;       |divisor_de_frecuencia:GameClk|     ; 44 (44)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 1 (1)             ; 26 (26)          ; |test_VGA|FSM_game:Game|divisor_de_frecuencia:GameClk                              ; divisor_de_frecuencia ; work         ;
+; |test_VGA                                 ; 213 (38)    ; 88 (0)                    ; 0 (0)         ; 768         ; 1    ; 0            ; 0       ; 0         ; 13   ; 0            ; 125 (38)     ; 2 (0)             ; 86 (0)           ; |test_VGA                                                                          ; test_VGA              ; work         ;
+;    |FSM_game:Game|                        ; 56 (11)     ; 37 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (1)       ; 2 (1)             ; 35 (9)           ; |test_VGA|FSM_game:Game                                                            ; FSM_game              ; work         ;
+;       |divisor_de_frecuencia:GameClk|     ; 45 (45)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 1 (1)             ; 26 (26)          ; |test_VGA|FSM_game:Game|divisor_de_frecuencia:GameClk                              ; divisor_de_frecuencia ; work         ;
 ;    |VGA_Driver1024x768:VGA1024x768|       ; 41 (41)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 24 (24)          ; |test_VGA|VGA_Driver1024x768:VGA1024x768                                           ; VGA_Driver1024x768    ; work         ;
 ;    |buffer_ram_dp:DP_RAM|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM                                                     ; buffer_ram_dp         ; work         ;
 ;       |altsyncram:ram_rtl_0|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0                                ; altsyncram            ; work         ;
@@ -698,9 +698,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Mux8~0                                      ; 0                 ; 6       ;
 ; switch[0]                                          ;                   ;         ;
 ;      - Mux5~0                                      ; 1                 ; 0       ;
-;      - Mux1~0                                      ; 0                 ; 0       ;
+;      - Mux1~0                                      ; 1                 ; 0       ;
 ;      - Mux2~0                                      ; 1                 ; 0       ;
-;      - Mux7~0                                      ; 1                 ; 0       ;
+;      - Mux7~0                                      ; 0                 ; 0       ;
 ; switch[1]                                          ;                   ;         ;
 ;      - Mux5~0                                      ; 1                 ; 6       ;
 ;      - Mux5~1                                      ; 1                 ; 6       ;
@@ -715,12 +715,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+-------------------+---------+--------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location          ; Fan-Out ; Usage                    ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+-------------------+---------+--------------------------+--------+----------------------+------------------+---------------------------+
-; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out                                  ; FF_X33_Y16_N9     ; 10      ; Clock                    ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; FSM_game:Game|write                                                                  ; FF_X14_Y4_N29     ; 1       ; Write enable             ; no     ; --                   ; --               ; --                        ;
-; FSM_game:Game|write~0                                                                ; LCCOMB_X14_Y4_N20 ; 9       ; Clock enable             ; no     ; --                   ; --               ; --                        ;
-; Mux1~0                                                                               ; LCCOMB_X1_Y11_N14 ; 8       ; Latch enable             ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; VGA_Driver1024x768:VGA1024x768|countX[7]~26                                          ; LCCOMB_X19_Y5_N12 ; 24      ; Clock enable, Sync. load ; no     ; --                   ; --               ; --                        ;
-; VGA_Driver1024x768:VGA1024x768|countY[3]~21                                          ; LCCOMB_X19_Y5_N30 ; 12      ; Sync. load               ; no     ; --                   ; --               ; --                        ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out                                  ; FF_X33_Y12_N13    ; 10      ; Clock                    ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; FSM_game:Game|write                                                                  ; FF_X16_Y9_N21     ; 1       ; Write enable             ; no     ; --                   ; --               ; --                        ;
+; FSM_game:Game|write~0                                                                ; LCCOMB_X16_Y9_N24 ; 9       ; Clock enable             ; no     ; --                   ; --               ; --                        ;
+; Mux1~0                                                                               ; LCCOMB_X1_Y11_N14 ; 8       ; Latch enable             ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; VGA_Driver1024x768:VGA1024x768|countX[7]~26                                          ; LCCOMB_X10_Y10_N6 ; 24      ; Clock enable, Sync. load ; no     ; --                   ; --               ; --                        ;
+; VGA_Driver1024x768:VGA1024x768|countY[3]~21                                          ; LCCOMB_X10_Y10_N4 ; 12      ; Sync. load               ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                  ; PIN_23            ; 2       ; Clock                    ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                  ; PIN_23            ; 27      ; Clock                    ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 ; clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1             ; 52      ; Clock                    ; yes    ; Global Clock         ; GCLK3            ; --                        ;
@@ -732,8 +732,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out                                  ; FF_X33_Y16_N9     ; 10      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; Mux1~0                                                                               ; LCCOMB_X1_Y11_N14 ; 8       ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out                                  ; FF_X33_Y12_N13    ; 10      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; Mux1~0                                                                               ; LCCOMB_X1_Y11_N14 ; 8       ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
 ; clk                                                                                  ; PIN_23            ; 27      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
 ; clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1             ; 52      ; 4                                    ; Global Clock         ; GCLK3            ; --                        ;
 +--------------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
@@ -744,7 +744,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                             ; Location      ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_n4m1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 256          ; 3            ; 256          ; 3            ; yes                    ; no                      ; yes                    ; no                      ; 768  ; 256                         ; 3                           ; 256                         ; 3                           ; 768                 ; 1    ; db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif ; M9K_X15_Y4_N0 ; Old data             ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_n4m1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 256          ; 3            ; 256          ; 3            ; yes                    ; no                      ; yes                    ; no                      ; 768  ; 256                         ; 3                           ; 256                         ; 3                           ; 768                 ; 1    ; db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif ; M9K_X15_Y9_N0 ; Old data             ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -755,13 +755,13 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
 +----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-;0;(111) (7) (7) (07)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
+;0;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;8;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;16;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;24;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;32;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;40;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
-;48;(010) (2) (2) (02)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
+;48;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;56;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;64;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
 ;72;(000) (0) (0) (00)    ;(001) (1) (1) (01)   ;(010) (2) (2) (02)   ;(011) (3) (3) (03)   ;(100) (4) (4) (04)   ;(101) (5) (5) (05)   ;(110) (6) (6) (06)   ;(111) (7) (7) (07)   ;
@@ -794,38 +794,38 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 282 / 32,401 ( < 1 % ) ;
-; C16 interconnects     ; 21 / 1,326 ( 2 % )     ;
-; C4 interconnects      ; 240 / 21,816 ( 1 % )   ;
-; Direct links          ; 40 / 32,401 ( < 1 % )  ;
+; Block interconnects   ; 294 / 32,401 ( < 1 % ) ;
+; C16 interconnects     ; 19 / 1,326 ( 1 % )     ;
+; C4 interconnects      ; 211 / 21,816 ( < 1 % ) ;
+; Direct links          ; 60 / 32,401 ( < 1 % )  ;
 ; Global clocks         ; 4 / 10 ( 40 % )        ;
-; Local interconnects   ; 92 / 10,320 ( < 1 % )  ;
-; R24 interconnects     ; 17 / 1,289 ( 1 % )     ;
-; R4 interconnects      ; 270 / 28,186 ( < 1 % ) ;
+; Local interconnects   ; 86 / 10,320 ( < 1 % )  ;
+; R24 interconnects     ; 13 / 1,289 ( 1 % )     ;
+; R4 interconnects      ; 296 / 28,186 ( 1 % )   ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.78) ; Number of LABs  (Total = 18) ;
+; Number of Logic Elements  (Average = 11.83) ; Number of LABs  (Total = 18) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 2                            ;
-; 2                                           ; 1                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 1                            ;
 ; 13                                          ; 1                            ;
 ; 14                                          ; 0                            ;
 ; 15                                          ; 1                            ;
-; 16                                          ; 9                            ;
+; 16                                          ; 8                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -843,25 +843,25 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 16.67) ; Number of LABs  (Total = 18) ;
+; Number of Signals Sourced  (Average = 16.72) ; Number of LABs  (Total = 18) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 1                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 2                            ;
+; 13                                           ; 1                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 3                            ;
+; 15                                           ; 2                            ;
+; 16                                           ; 2                            ;
 ; 17                                           ; 0                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 0                            ;
@@ -869,8 +869,8 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ; 21                                           ; 1                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 3                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 2                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 2                            ;
@@ -880,23 +880,23 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.78) ; Number of LABs  (Total = 18) ;
+; Number of Signals Sourced Out  (Average = 8.17) ; Number of LABs  (Total = 18) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 3                            ;
+; 1                                               ; 1                            ;
 ; 2                                               ; 0                            ;
 ; 3                                               ; 0                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 2                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 0                            ;
 ; 7                                               ; 3                            ;
 ; 8                                               ; 2                            ;
-; 9                                               ; 1                            ;
-; 10                                              ; 2                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 3                            ;
 ; 11                                              ; 0                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 0                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 1                            ;
+; 14                                              ; 1                            ;
 ; 15                                              ; 0                            ;
 ; 16                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
@@ -905,33 +905,29 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.11) ; Number of LABs  (Total = 18) ;
+; Number of Distinct Inputs  (Average = 10.50) ; Number of LABs  (Total = 18) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 3                            ;
+; 3                                            ; 2                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 1                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
+; 6                                            ; 3                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 1                            ;
-; 9                                            ; 0                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 1                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 2                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
 ; 17                                           ; 1                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 4                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1053,9 +1049,9 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-------------------------------------------------------+----------------------+-------------------+
 ; Source Clock(s)                                       ; Destination Clock(s) ; Delay Added in ns ;
 +-------------------------------------------------------+----------------------+-------------------+
-; clk75|altpll_component|auto_generated|pll1|clk[0]     ; switch[0]            ; 195.3             ;
-; I/O                                                   ; switch[0]            ; 16.7              ;
-; clk75|altpll_component|auto_generated|pll1|clk[0],I/O ; switch[0]            ; 10.3              ;
+; clk75|altpll_component|auto_generated|pll1|clk[0]     ; switch[0]            ; 192.0             ;
+; I/O                                                   ; switch[0]            ; 13.4              ;
+; clk75|altpll_component|auto_generated|pll1|clk[0],I/O ; switch[0]            ; 10.6              ;
 +-------------------------------------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1066,48 +1062,48 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------------------------------+-----------------------------------------------------+-------------------+
 ; Source Register                                       ; Destination Register                                ; Delay Added in ns ;
 +-------------------------------------------------------+-----------------------------------------------------+-------------------+
-; VGA_Driver1024x768:VGA1024x768|countY[7]              ; DP_RAM_addr_out[1]                                  ; 7.414             ;
-; VGA_Driver1024x768:VGA1024x768|countY[8]              ; DP_RAM_addr_out[1]                                  ; 7.229             ;
-; VGA_Driver1024x768:VGA1024x768|countY[9]              ; DP_RAM_addr_out[1]                                  ; 7.197             ;
-; VGA_Driver1024x768:VGA1024x768|countY[11]             ; DP_RAM_addr_out[1]                                  ; 7.134             ;
-; VGA_Driver1024x768:VGA1024x768|countY[10]             ; DP_RAM_addr_out[1]                                  ; 7.027             ;
-; VGA_Driver1024x768:VGA1024x768|countX[8]              ; DP_RAM_addr_out[2]                                  ; 6.605             ;
-; VGA_Driver1024x768:VGA1024x768|countX[6]              ; DP_RAM_addr_out[0]                                  ; 6.569             ;
-; VGA_Driver1024x768:VGA1024x768|countX[9]              ; DP_RAM_addr_out[3]                                  ; 6.548             ;
-; VGA_Driver1024x768:VGA1024x768|countX[10]             ; DP_RAM_addr_out[1]                                  ; 6.515             ;
-; VGA_Driver1024x768:VGA1024x768|countX[7]              ; DP_RAM_addr_out[1]                                  ; 6.474             ;
-; VGA_Driver1024x768:VGA1024x768|countY[6]              ; DP_RAM_addr_out[4]                                  ; 6.373             ;
-; VGA_Driver1024x768:VGA1024x768|countX[11]             ; DP_RAM_addr_out[1]                                  ; 6.336             ;
-; switch[0]                                             ; DP_RAM_addr_out[1]                                  ; 4.086             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out   ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 3.598             ;
-; switch[1]                                             ; DP_RAM_addr_out[1]                                  ; 2.903             ;
-; switch[2]                                             ; DP_RAM_addr_out[1]                                  ; 2.903             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[24] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[23] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[22] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[21] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[20] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[19] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[18] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[17] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[16] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[7]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[4]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[6]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[5]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[3]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[2]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[1]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[8]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[9]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[10] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[11] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[12] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[14] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[15] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[13] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[0]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
-; FSM_game:Game|divisor_de_frecuencia:GameClk|count[25] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.799             ;
+; VGA_Driver1024x768:VGA1024x768|countY[7]              ; DP_RAM_addr_out[7]                                  ; 7.188             ;
+; VGA_Driver1024x768:VGA1024x768|countY[8]              ; DP_RAM_addr_out[7]                                  ; 7.013             ;
+; VGA_Driver1024x768:VGA1024x768|countY[9]              ; DP_RAM_addr_out[7]                                  ; 6.978             ;
+; VGA_Driver1024x768:VGA1024x768|countY[11]             ; DP_RAM_addr_out[7]                                  ; 6.935             ;
+; VGA_Driver1024x768:VGA1024x768|countY[10]             ; DP_RAM_addr_out[7]                                  ; 6.828             ;
+; VGA_Driver1024x768:VGA1024x768|countX[9]              ; DP_RAM_addr_out[3]                                  ; 6.597             ;
+; VGA_Driver1024x768:VGA1024x768|countY[6]              ; DP_RAM_addr_out[4]                                  ; 6.574             ;
+; VGA_Driver1024x768:VGA1024x768|countX[8]              ; DP_RAM_addr_out[2]                                  ; 6.517             ;
+; VGA_Driver1024x768:VGA1024x768|countX[10]             ; DP_RAM_addr_out[3]                                  ; 6.484             ;
+; VGA_Driver1024x768:VGA1024x768|countX[7]              ; DP_RAM_addr_out[1]                                  ; 6.441             ;
+; VGA_Driver1024x768:VGA1024x768|countX[11]             ; DP_RAM_addr_out[3]                                  ; 6.305             ;
+; VGA_Driver1024x768:VGA1024x768|countX[6]              ; DP_RAM_addr_out[0]                                  ; 5.919             ;
+; switch[0]                                             ; DP_RAM_addr_out[0]                                  ; 3.807             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out   ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 3.603             ;
+; switch[1]                                             ; DP_RAM_addr_out[0]                                  ; 2.847             ;
+; switch[2]                                             ; DP_RAM_addr_out[0]                                  ; 2.847             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[24] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[23] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[22] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[21] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[20] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[19] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[18] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[17] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[16] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[8]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[7]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[5]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[6]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[4]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[3]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[2]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[1]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[10] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[9]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[11] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[13] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[12] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[14] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[15] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[0]  ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
+; FSM_game:Game|divisor_de_frecuencia:GameClk|count[25] ; FSM_game:Game|divisor_de_frecuencia:GameClk|clk_out ; 1.801             ;
 +-------------------------------------------------------+-----------------------------------------------------+-------------------+
 Note: This table only shows the top 42 path(s) that have the largest delay added for hold.
 
@@ -1165,7 +1161,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
+    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
@@ -1174,12 +1170,12 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/output_files/test_VGA.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5221 megabytes
-    Info: Processing ended: Sat Feb  5 13:34:22 2022
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 5225 megabytes
+    Info: Processing ended: Sat Feb  5 15:15:25 2022
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
 
 

@@ -25,7 +25,7 @@ assign px_wr = write;
 
 wire gameclk;
 
-divisor_de_frecuencia #(50000000,100) GameClk(
+divisor_de_frecuencia #(50000000,10) GameClk(
 	.clk(clk),
 	.clk_out(gameclk)
 );

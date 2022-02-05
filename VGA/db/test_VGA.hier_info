@@ -28,12 +28,12 @@ switch[2] => Mux1.IN8
 switch[2] => Mux0.IN6
 switch[2] => Mux7.IN8
 switch[2] => Mux8.IN8
-VGA_Hsync_n <= VGA_Driver1024x768:VGA1024x768.Hsync_n
-VGA_Vsync_n <= VGA_Driver1024x768:VGA1024x768.Vsync_n
-VGA_R <= VGA_Driver1024x768:VGA1024x768.pixelOut
-VGA_G <= VGA_Driver1024x768:VGA1024x768.pixelOut
-VGA_B <= VGA_Driver1024x768:VGA1024x768.pixelOut
-clkout <= divisor_de_frecuencia:divisor1Hz.clk_out
+VGA_Hsync_n << VGA_Driver1024x768:VGA1024x768.Hsync_n
+VGA_Vsync_n << VGA_Driver1024x768:VGA1024x768.Vsync_n
+VGA_R << VGA_Driver1024x768:VGA1024x768.pixelOut
+VGA_G << VGA_Driver1024x768:VGA1024x768.pixelOut
+VGA_B << VGA_Driver1024x768:VGA1024x768.pixelOut
+clkout << divisor_de_frecuencia:divisor1Hz.clk_out
 bntr => _.IN1
 bntl => _.IN1
 

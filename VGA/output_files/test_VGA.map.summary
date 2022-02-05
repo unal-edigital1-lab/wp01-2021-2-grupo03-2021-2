@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sat Feb  5 13:34:15 2022
+Analysis & Synthesis Status : Successful - Sat Feb  5 15:15:19 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : test_VGA
 Top-level Entity Name : test_VGA
 Family : Cyclone IV E
-Total logic elements : 210
-    Total combinational functions : 210
+Total logic elements : 211
+    Total combinational functions : 211
     Dedicated logic registers : 88
 Total registers : 88
 Total pins : 13
