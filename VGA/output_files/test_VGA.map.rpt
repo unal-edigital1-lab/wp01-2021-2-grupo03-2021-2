@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_VGA
-Fri Feb  4 19:52:58 2022
+Sat Feb  5 11:43:36 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -20,12 +20,14 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
  12. Parameter Settings for User Entity Instance: Top-level Entity: |test_VGA
  13. Parameter Settings for User Entity Instance: clock75:clk75|altpll:altpll_component
  14. Parameter Settings for User Entity Instance: buffer_ram_dp:DP_RAM
- 15. altpll Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "VGA_Driver1024x768:VGA1024x768"
- 17. Port Connectivity Checks: "buffer_ram_dp:DP_RAM"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 15. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 16. altpll Parameter Settings by Entity Instance
+ 17. lpm_mult Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "VGA_Driver1024x768:VGA1024x768"
+ 19. Port Connectivity Checks: "buffer_ram_dp:DP_RAM"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -52,13 +54,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb  4 19:52:58 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb  5 11:43:36 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 151                                         ;
-;     Total combinational functions  ; 151                                         ;
+; Total logic elements               ; 167                                         ;
+;     Total combinational functions  ; 167                                         ;
 ;     Dedicated logic registers      ; 54                                          ;
 ; Total registers                    ; 54                                          ;
 ; Total pins                         ; 13                                          ;
@@ -188,6 +190,12 @@ https://fpgasoftware.intel.com/eula.
 ; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cycloneii_pll.inc               ;         ;
 ; db/clock75_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/clock75_altpll.v     ;         ;
 ; divisor_de_frecuencia.v          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/divisor_de_frecuencia.v ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mult.tdf                    ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc                 ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/multcore.inc                    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc                    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altshift.inc                    ;         ;
+; db/mult_j8t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/mult_j8t.tdf         ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -196,17 +204,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 151                                                                                  ;
+; Estimated Total logic elements              ; 167                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 151                                                                                  ;
+; Total combinational functions               ; 167                                                                                  ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 31                                                                                   ;
-;     -- 3 input functions                    ; 30                                                                                   ;
-;     -- <=2 input functions                  ; 90                                                                                   ;
+;     -- 4 input functions                    ; 54                                                                                   ;
+;     -- 3 input functions                    ; 38                                                                                   ;
+;     -- <=2 input functions                  ; 75                                                                                   ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 87                                                                                   ;
-;     -- arithmetic mode                      ; 64                                                                                   ;
+;     -- normal mode                          ; 104                                                                                  ;
+;     -- arithmetic mode                      ; 63                                                                                   ;
 ;                                             ;                                                                                      ;
 ; Total registers                             ; 54                                                                                   ;
 ;     -- Dedicated logic registers            ; 54                                                                                   ;
@@ -221,8 +229,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 55                                                                                   ;
-; Total fan-out                               ; 575                                                                                  ;
-; Average fan-out                             ; 2.48                                                                                 ;
+; Total fan-out                               ; 661                                                                                  ;
+; Average fan-out                             ; 2.67                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -231,13 +239,15 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Entity Name           ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------------+--------------+
-; |test_VGA                                ; 151 (60)            ; 54 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |test_VGA                                                                     ; test_VGA              ; work         ;
+; |test_VGA                                ; 167 (40)            ; 54 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |test_VGA                                                                     ; test_VGA              ; work         ;
 ;    |VGA_Driver1024x768:VGA1024x768|      ; 41 (41)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|VGA_Driver1024x768:VGA1024x768                                      ; VGA_Driver1024x768    ; work         ;
-;    |buffer_ram_dp:DP_RAM|                ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM                                                ; buffer_ram_dp         ; work         ;
+;    |buffer_ram_dp:DP_RAM|                ; 8 (8)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM                                                ; buffer_ram_dp         ; work         ;
 ;    |clock75:clk75|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clock75:clk75                                                       ; clock75               ; work         ;
 ;       |altpll:altpll_component|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clock75:clk75|altpll:altpll_component                               ; altpll                ; work         ;
 ;          |clock75_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated ; clock75_altpll        ; work         ;
-;    |divisor_de_frecuencia:comb_7|        ; 47 (47)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|divisor_de_frecuencia:comb_7                                        ; divisor_de_frecuencia ; work         ;
+;    |divisor_de_frecuencia:divisor1Hz|    ; 47 (47)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|divisor_de_frecuencia:divisor1Hz                                    ; divisor_de_frecuencia ; work         ;
+;    |lpm_mult:Mult0|                      ; 31 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|lpm_mult:Mult0                                                      ; lpm_mult              ; work         ;
+;       |mult_j8t:auto_generated|          ; 31 (31)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|lpm_mult:Mult0|mult_j8t:auto_generated                              ; mult_j8t              ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -251,29 +261,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; countx[2]                                           ; Equal0              ; yes                    ;
-; county[2]                                           ; Equal1              ; yes                    ;
-; countx[6]                                           ; Equal0              ; yes                    ;
-; countx[5]                                           ; Equal0              ; yes                    ;
-; county[1]                                           ; Equal1              ; yes                    ;
-; countx[4]                                           ; Equal0              ; yes                    ;
-; county[0]                                           ; Equal1              ; yes                    ;
-; countx[7]                                           ; Equal0              ; yes                    ;
-; county[3]                                           ; Equal1              ; yes                    ;
-; countx[1]                                           ; Equal0              ; yes                    ;
-; countx[0]                                           ; Equal0              ; yes                    ;
-; county[4]                                           ; Equal1              ; yes                    ;
-; county[5]                                           ; Equal1              ; yes                    ;
-; county[6]                                           ; Equal1              ; yes                    ;
-; county[7]                                           ; Equal1              ; yes                    ;
-; countx[3]                                           ; Equal0              ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; DP_RAM_addr_out[4]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[3]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[2]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[1]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[0]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[6]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[5]                                 ; Mux1                ; yes                    ;
+; DP_RAM_addr_out[7]                                 ; Mux1                ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -292,14 +294,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver1024x768:VGA1024x768|countX[6] ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver1024x768:VGA1024x768|countY[6] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver1024x768:VGA1024x768|countX[11] ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver1024x768:VGA1024x768|countY[11] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |test_VGA|Mux6                                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |test_VGA|Mux2                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -699,6 +703,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4            ; Untyped             ;
+; LPM_WIDTHB                                     ; 4            ; Untyped             ;
+; LPM_WIDTHP                                     ; 8            ; Untyped             ;
+; LPM_WIDTHR                                     ; 8            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_j8t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                          ;
 +-------------------------------+---------------------------------------+
@@ -716,16 +755,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+---------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA_Driver1024x768:VGA1024x768"                                                                                                                          ;
-+-------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                                                           ;
-+-------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; pixelIn     ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "pixelIn[11..3]" will be connected to GND. ;
-; pixelOut    ; Output ; Warning  ; Output or bidir port (12 bits) is wider than the port expression (3 bits) it drives; bit(s) "pixelOut[11..3]" have no fanouts                     ;
-; posX[11..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                               ;
-; posY[11..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                               ;
-+-------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4              ;
+;     -- LPM_WIDTHB                     ; 4              ;
+;     -- LPM_WIDTHP                     ; 8              ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Driver1024x768:VGA1024x768"                                                                                                                         ;
++------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                           ;
++------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; pixelIn    ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "pixelIn[11..3]" will be connected to GND. ;
+; pixelOut   ; Output ; Warning  ; Output or bidir port (12 bits) is wider than the port expression (3 bits) it drives; bit(s) "pixelOut[11..3]" have no fanouts                     ;
+; posX[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                               ;
+; posY[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                               ;
++------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -747,20 +806,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 12                          ;
 ;     SLD               ; 12                          ;
 ;     plain             ; 30                          ;
-; cycloneiii_lcell_comb ; 151                         ;
-;     arith             ; 64                          ;
-;         2 data inputs ; 61                          ;
-;         3 data inputs ; 3                           ;
-;     normal            ; 87                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 31                          ;
+; cycloneiii_lcell_comb ; 167                         ;
+;     arith             ; 63                          ;
+;         2 data inputs ; 49                          ;
+;         3 data inputs ; 14                          ;
+;     normal            ; 104                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 54                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.84                        ;
+; Max LUT depth         ; 8.10                        ;
+; Average LUT depth     ; 4.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -779,7 +838,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Feb  4 19:52:45 2022
+    Info: Processing started: Sat Feb  5 11:43:25 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_VGA -c test_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -799,31 +858,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock75
     Info (12023): Found entity 1: clock75 File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/clock75.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file clk220.v
     Info (12023): Found entity 1: clk220 File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/clk220.v Line: 40
-Critical Warning (10846): Verilog HDL Instantiation warning at test_VGA.v(94): instance has no name File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 94
 Info (12127): Elaborating entity "test_VGA" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at test_VGA.v(147): variable "countx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 147
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(147): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 147
-Warning (10235): Verilog HDL Always Construct warning at test_VGA.v(150): variable "county" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 150
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(150): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 150
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(152): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 152
-Warning (10240): Verilog HDL Always Construct warning at test_VGA.v(144): inferring latch(es) for variable "countx", which holds its previous value in one or more paths through the always construct File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
-Warning (10240): Verilog HDL Always Construct warning at test_VGA.v(144): inferring latch(es) for variable "county", which holds its previous value in one or more paths through the always construct File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
-Info (10041): Inferred latch for "county[0]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[1]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[2]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[3]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[4]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[5]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[6]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "county[7]" at test_VGA.v(149) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 149
-Info (10041): Inferred latch for "countx[0]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[1]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[2]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[3]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[4]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[5]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[6]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
-Info (10041): Inferred latch for "countx[7]" at test_VGA.v(146) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
+Warning (10235): Verilog HDL Always Construct warning at test_VGA.v(146): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 146
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(151): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 151
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(155): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at test_VGA.v(159): variable "switch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 159
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(160): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 160
+Warning (10270): Verilog HDL Case Statement warning at test_VGA.v(159): incomplete case statement has no default case item File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at test_VGA.v(144): inferring latch(es) for variable "DP_RAM_addr_out", which holds its previous value in one or more paths through the always construct File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[0]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[1]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[2]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[3]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[4]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[5]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[6]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Info (10041): Inferred latch for "DP_RAM_addr_out[7]" at test_VGA.v(144) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
 Info (12128): Elaborating entity "clock75" for hierarchy "clock75:clk75" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 89
 Info (12128): Elaborating entity "altpll" for hierarchy "clock75:clk75|altpll:altpll_component" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/clock75.v Line: 91
 Info (12130): Elaborated megafunction instantiation "clock75:clk75|altpll:altpll_component" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/clock75.v Line: 91
@@ -887,7 +937,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cloc
 Info (12128): Elaborating entity "clock75_altpll" for hierarchy "clock75:clk75|altpll:altpll_component|clock75_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Warning (12125): Using design file divisor_de_frecuencia.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: divisor_de_frecuencia File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/divisor_de_frecuencia.v Line: 1
-Info (12128): Elaborating entity "divisor_de_frecuencia" for hierarchy "divisor_de_frecuencia:comb_7" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 94
+Info (12128): Elaborating entity "divisor_de_frecuencia" for hierarchy "divisor_de_frecuencia:divisor1Hz" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 94
 Warning (10230): Verilog HDL assignment warning at divisor_de_frecuencia.v(24): truncated value with size 32 to match size of target (26) File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/divisor_de_frecuencia.v Line: 24
 Info (12128): Elaborating entity "buffer_ram_dp" for hierarchy "buffer_ram_dp:DP_RAM" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 111
 Warning (10850): Verilog HDL warning at buffer_ram_dp.v(54): number of words (192) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v Line: 54
@@ -899,25 +949,59 @@ Warning (10230): Verilog HDL assignment warning at VGA_driver.v(71): truncated v
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "buffer_ram_dp:DP_RAM|ram" is uninferred due to inappropriate RAM size File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/buffer_ram_dp.v Line: 38
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/test_VGA.ram0_buffer_ram_dp_882e8226.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 164
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 164
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 164
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_j8t.tdf
+    Info (12023): Found entity 1: mult_j8t File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/mult_j8t.tdf Line: 29
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_j8t:auto_generated|le5a[4]" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/db/mult_j8t.tdf Line: 43
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 48 buffer(s)
+    Info (13016): Ignored 4 CARRY_SUM buffer(s)
+    Info (13019): Ignored 44 SOFT buffer(s)
+Warning (13012): Latch DP_RAM_addr_out[4] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[3] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[1] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[2] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[1] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[1] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[0] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[6] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[5] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (13012): Latch DP_RAM_addr_out[7] has unsafe behavior File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[0] File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "switch[0]" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "switch[1]" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "switch[2]" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 26
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "bntr" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 37
     Warning (15610): No output dependent on input pin "bntl" File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 40
-Info (21057): Implemented 165 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 181 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 151 logic cells
+    Info (21061): Implemented 167 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 4749 megabytes
-    Info: Processing ended: Fri Feb  4 19:52:58 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Sat Feb  5 11:43:36 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
 
 

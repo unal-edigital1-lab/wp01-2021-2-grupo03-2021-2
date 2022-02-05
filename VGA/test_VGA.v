@@ -88,7 +88,7 @@ clock75 clk75(
 	
 );
 
-divisor_de_frecuencia(
+divisor_de_frecuencia divisor1Hz(
 	.clk(clk75M),
 	.clk_out(clkout)
 );
@@ -143,34 +143,31 @@ localparam height = CAM_SCREEN_Y/px_scale;
 
 always @ (VGA_posX, VGA_posY) begin
 	
-	if(VGA_posX % px_scale == px_scale-1) 
-		countx = countx>=width ? 0 : countx + 1;
-		
-	if(VGA_posY % px_scale == px_scale-1) 
-		county = county>=height ? 0 : county + 1;
+	if(~rst) begin
+		countx=0;
+		county=0;
+	end
 	
-	DP_RAM_addr_out = countx + county*width;
+	countx=VGA_posX/px_scale;
+	if(countx>=width) 
+		countx = 0;
+	
+	county=VGA_posY/px_scale;
+	if(county>=height) 
+		county = 0;
+	
+	case(switch)
+		0: DP_RAM_addr_out = countx+county*width;
+		1: DP_RAM_addr_out = countx;
+		2: DP_RAM_addr_out = county;
+		3: DP_RAM_addr_out = countx+county;
+		4: DP_RAM_addr_out = countx*county;
+	endcase
 end
 	
-		
-	/*if (countX >= width) begin
-		countX = 0;
-		if (countY >= height) begin
-			countY = 0;
-		end 
-		else begin
-			countY = (VGA_posY % px_scale == px_scale-1) ? countY : countY + 1;
-		end
-	end 
-	else begin
-		countX = (VGA_posX % px_scale == (px_scale-1)) ? countX : countX + 1;
-	end*/
-	
-	/*case (switch)
-		3'b000: DP_RAM_addr_out=3'b100;  
-		3'b001: DP_RAM_addr_out=3'b010; 
-		3'b010: DP_RAM_addr_out=3'b001; 
-	endcase*/
-
+initial begin
+	countx=0;
+	county=0;
+end
 
 endmodule

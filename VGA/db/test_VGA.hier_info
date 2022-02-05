@@ -1,15 +1,39 @@
 |test_VGA
 clk => clk50M.IN1
 rst => _.IN1
-switch[0] => ~NO_FANOUT~
-switch[1] => ~NO_FANOUT~
-switch[2] => ~NO_FANOUT~
+switch[0] => Mux6.IN7
+switch[0] => Mux5.IN7
+switch[0] => Mux4.IN7
+switch[0] => Mux3.IN7
+switch[0] => Mux2.IN8
+switch[0] => Mux1.IN10
+switch[0] => Mux0.IN8
+switch[0] => Mux7.IN10
+switch[0] => Mux8.IN10
+switch[1] => Mux6.IN6
+switch[1] => Mux5.IN6
+switch[1] => Mux4.IN6
+switch[1] => Mux3.IN6
+switch[1] => Mux2.IN7
+switch[1] => Mux1.IN9
+switch[1] => Mux0.IN7
+switch[1] => Mux7.IN9
+switch[1] => Mux8.IN9
+switch[2] => Mux6.IN5
+switch[2] => Mux5.IN5
+switch[2] => Mux4.IN5
+switch[2] => Mux3.IN5
+switch[2] => Mux2.IN6
+switch[2] => Mux1.IN8
+switch[2] => Mux0.IN6
+switch[2] => Mux7.IN8
+switch[2] => Mux8.IN8
 VGA_Hsync_n <= VGA_Driver1024x768:VGA1024x768.Hsync_n
 VGA_Vsync_n <= VGA_Driver1024x768:VGA1024x768.Vsync_n
 VGA_R <= VGA_Driver1024x768:VGA1024x768.pixelOut
 VGA_G <= VGA_Driver1024x768:VGA1024x768.pixelOut
 VGA_B <= VGA_Driver1024x768:VGA1024x768.pixelOut
-clkout <= divisor_de_frecuencia:comb_7.clk_out
+clkout <= divisor_de_frecuencia:divisor1Hz.clk_out
 bntr => ~NO_FANOUT~
 bntl => ~NO_FANOUT~
 
@@ -89,7 +113,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|test_VGA|divisor_de_frecuencia:comb_7
+|test_VGA|divisor_de_frecuencia:divisor1Hz
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
