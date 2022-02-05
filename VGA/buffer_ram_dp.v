@@ -19,7 +19,7 @@
 module buffer_ram_dp#( 
 	parameter AW = 8, // Cantidad de bits  de la direccin 
 	parameter DW = 3, // cantidad de Bits de los datos 
-	parameter   imageFILE= "C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
+	parameter imageFILE= "C:/Digital/wp01-2021-2-grupo03-2021-2/VGA/imagetxt.txt")
 	(  
 	input  clk_w, 
 	input  [AW-1: 0] addr_in, 

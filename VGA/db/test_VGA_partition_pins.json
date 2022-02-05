@@ -32,6 +32,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "bntr",
+					"strict" : false
+				},
+				{
+					"name" : "bntl",
+					"strict" : false
+				},
+				{
 					"name" : "switch[2]",
 					"strict" : false
 				},

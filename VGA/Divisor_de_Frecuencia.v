@@ -1,4 +1,7 @@
-module divisor_de_frecuencia(
+module divisor_de_frecuencia#( 
+	parameter in_f = 75000000, //Frecuencia de entrada 
+	parameter out_f = 1 //Frecuencia de salida deseada
+)(
 	//Entradas
 	input clk,
 	
@@ -6,8 +9,8 @@ module divisor_de_frecuencia(
 	output reg clk_out
 );
 
-localparam f_0 = 75000000; //Frecuencia del clk de entrada
-localparam f_out = 1; //Frecuencia de salida deseada
+localparam f_0 = in_f; //Frecuencia del clk de entrada
+localparam f_out = out_f; //Frecuencia de salida deseada
 localparam max = f_0/(2*f_out); //Máximo valor del contador
 reg [25:0] count; //Contador
 

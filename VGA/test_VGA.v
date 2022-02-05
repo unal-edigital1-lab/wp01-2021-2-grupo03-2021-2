@@ -93,6 +93,8 @@ divisor_de_frecuencia divisor1Hz(
 	.clk_out(clkout)
 );
 
+
+
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
 Se debe configurar AW  según los calculos realizados en el Wp01
@@ -116,7 +118,7 @@ VGA_Driver640x480
 **************************************************************************** */
 VGA_Driver1024x768 VGA1024x768
 (
-	.rst(~rst),
+	.rst(rst),
 	.clk(clk75M), 				// 25MHz  para 60 hz de 640x480
 	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 111 
 //	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 111 
@@ -134,6 +136,18 @@ LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
 adicionales seran iguales al color del último pixel de memoria 
 **************************************************************************** */
+
+FSM_game Game(
+	.clk(clk50M),
+	.rst(rst),
+	.in1(~bntr),
+	.in2(~bntl),
+	
+	.mem_px_addr(DP_RAM_addr_in),
+	.mem_px_data(DP_RAM_data_in),
+	.px_wr(DP_RAM_regW)
+);
+
 reg [AW-1:0] countx;
 reg [AW-1:0] county;
 
@@ -143,7 +157,7 @@ localparam height = CAM_SCREEN_Y/px_scale;
 
 always @ (VGA_posX, VGA_posY) begin
 	
-	if(~rst) begin
+	if(rst) begin
 		countx=0;
 		county=0;
 	end

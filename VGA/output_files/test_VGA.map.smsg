@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at test_VGA.v(144): always construct contains both blocking and non-blocking assignments File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/test_VGA.v Line: 144
+Warning (10268): Verilog HDL information at fsm_game.v(33): always construct contains both blocking and non-blocking assignments File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/fsm_game.v Line: 33
+Info (10281): Verilog HDL Declaration information at fsm_game.v(26): object "gameclk" differs only in case from object "GameClk" in the same scope File: C:/Users/diego/Documents/GitHub/wp01-2021-2-grupo03-2021-2/VGA/fsm_game.v Line: 26
