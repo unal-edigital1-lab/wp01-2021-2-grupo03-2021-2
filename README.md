@@ -91,7 +91,7 @@ Para solventar la decisión de mostrar en toda la pantalla se optó por proponer
 
 SI SE QUIERE AQUI PONER LA LOGICA QUE HICIMOS Y NO SIRVIO :,U
 
-![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/master/figs/ErrorVisualizacion.png)
+![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/ErrorVisualizacion.jpeg)
 
 Como es claro a simple inspección, los resultados no son coherentes con los esperados. Tras revisar y corregir el código se evidencia que aunque la lógica era adecuada no era la forma más idónea de implmentarla pues se hacían muchas comparaciones y operaciones en muy poco tiempo haciendo que no existiera sincronización adecuada con el reloj; por lo tanto se procedio con una versión mejorada del código:
 
@@ -99,7 +99,7 @@ SI SE QUIERE AQUI PONER LA LOGICA QUE EL PROFE AYUDÓ :,U
 
 Así, se obtiene el resultado correspondiente al propuesto por el grupo como se muestra a continuación.
 
-![Fig2](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/master/figs/VisualizacionCorrecta.png)
+![Fig2](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/VisualizacionCorrecta.png)
 
 
 
