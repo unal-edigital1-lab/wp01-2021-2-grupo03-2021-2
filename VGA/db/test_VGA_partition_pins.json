@@ -32,7 +32,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "bntl",
 					"strict" : false
 				},
 				{
@@ -40,7 +40,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "bntl",
+					"name" : "clr",
 					"strict" : false
 				},
 				{
@@ -48,11 +48,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[0]",
+					"name" : "switch[1]",
 					"strict" : false
 				},
 				{
-					"name" : "switch[1]",
+					"name" : "switch[0]",
 					"strict" : false
 				}
 			]

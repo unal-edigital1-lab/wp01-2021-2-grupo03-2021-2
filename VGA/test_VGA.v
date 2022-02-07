@@ -21,9 +21,10 @@
 module test_VGA(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
-
-	// VGA input/output  
+	 input wire clr,
 	 input wire [2:0] switch,
+	 
+	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire VGA_R,	// 4-bit VGA red output
@@ -138,10 +139,12 @@ adicionales seran iguales al color del último pixel de memoria
 **************************************************************************** */
 
 FSM_game Game(
-	.clk(clk50M),
+	.clk(clk75M),
 	.rst(rst),
 	.in1(~bntr),
 	.in2(~bntl),
+	.switch(switch),
+	.clr(clr),
 	
 	.mem_px_addr(DP_RAM_addr_in),
 	.mem_px_data(DP_RAM_data_in),
@@ -170,13 +173,8 @@ always @ (VGA_posX, VGA_posY) begin
 	if(county>=height) 
 		county = 0;
 	
-	case(switch)
-		0: DP_RAM_addr_out = countx+county*width;
-		1: DP_RAM_addr_out = countx;
-		2: DP_RAM_addr_out = county;
-		3: DP_RAM_addr_out = countx+county;
-		4: DP_RAM_addr_out = countx*county;
-	endcase
+	DP_RAM_addr_out = countx+county*width;
+	
 end
 	
 initial begin
