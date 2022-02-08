@@ -77,7 +77,7 @@ La anterior secuencia se contruyó repetitivamente en una representación de 256
 ## Dificultades y superación de las mismas.
 En un inicio la carga del blaster a la FPGA se hizo desde un computador de escritorio y no fue posible obtener la visualización; posteriormente tras haber revisado cada modificaición del código fue posible determinar que no era un problema del trabajo realizado; posteriormente se hizo la prueba pero ésta vez desde un computador portatil y todo corrió sin problema; es decir se concluye que existe un problema con la instalación de Quartus o alguna de sus extensiones en el primer equipo en el que fue probado.  A continuación se muestra el resultado final de la sección.
 
-##Simulación
+## Simulación
 Para realizar la simulación, se tuvo en cuenta que la salida es RGB111 por lo tanto, dado que el simulador de Eric Eastwood es RGB322 lo que se hizo fue adicionar los bits adicionales correspondientes teniendo en cuenta que el bit mas signifcativo corresponderia a la salida RGB111, el codigo usado para lo descrito se observa a continuación.
 ![Fig3](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/testbench.png)
 
