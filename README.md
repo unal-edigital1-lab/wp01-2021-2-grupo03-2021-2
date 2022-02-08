@@ -104,7 +104,8 @@ A partir del trabajo previamento mostrado y explicado se decidión proceder a ll
 ## Lógica de visualización.
 
 Para solventar la decisión de mostrar en toda la pantalla se optó por proponer el uso de "pixeles aumentados"; ésto quiere decir, pintar en un cuadrado de 64 x 64 pixeles la información correspondiente a un solo lugar de memoria; de ésta forma y con el uso de dos registros auxiliares se planteó la lógica correspondiente. A 
-continuación se observa la logica empleada
+continuación se observa la logica empleada.
+
 ![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicaprevia.png)
 
 Como se observa en la figura, en este caso se hace la operación modulo para evaluar el cambio de cuadrado, y se hace uso de un if para aumentar el contador en caso de que no se haya superado el borde de la pantalla, si ya se supero se asigna 0. En la dirección de memoria se asigna el valor del pixel correspondiente.
