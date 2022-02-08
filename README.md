@@ -75,10 +75,15 @@ RGB
 La anterior secuencia se contruyó repetitivamente en una representación de 256 líneas, ésto corresponde a que como se planeó pintar lineas no era necesario extenderse en dicha pixel a pixel, si no, mas bien desde la lógica de pixel empleada en la instanciación redirigir la lectura a los valores ya explicados. Vale la pena mencionar que por facilidad la construcción del archivo se hizo en excel y desde ahí se exportó a su forma final que se puede encontrar en la carpeta fuente.
 ## Logica
 A partir del codigo que se tenia, se realizaron los cambios correspondientes para implementarlo en la FPGA. El principal cambio fue en las salidas que son de 1 bit, además se estableció el tamaño de la pantalla con el que se iba trabajar, como se mencionó previamente será de 256x256. Finalmente se calcularon los parametros AW y DW a partir del tamaño de visualización establecido, para de esta forma cumplir con el requerimiento de memoria.
+
 ![Fig4](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas.png)
-Tambien es necesario asignar las salidas del VGA driver a cada una de las salidas designadas para cada color. Dado que el reloj de la pantalla es de 75MHz es necesario implementar un divisor de frecuencia, para aumentar la frecuencia proporcionada por el reloj de la FPGA que es de 50MHz
+
+Tambien es necesario asignar las salidas del VGA driver a cada una de las salidas designadas para cada color. Dado que el reloj de la pantalla es de 75MHz es necesario implementar un divisor de frecuencia, para aumentar la frecuencia proporcionada por el reloj de la FPGA que es de 50MHz.
+
 ![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/salidas.png)
+
 Finalmente, se implemento la logica que permite visualizar en la VGA lo que esta en memoria, en este caso la logica usada establece que todo lo que este fuera del tamaño definido sea de color negro. Por otro lado, para usar una menor cantidad de memoria y como se mencionó previamente, solo se guardan en memoria 256 pixeles y lo que se hace para el resto de pixeles es repetir la lectura de la memoria. Esto se logra usando tan solo la variable VGA_posX para indicar la dirección de memoria para la lectura, de esta forma se logra el objetivo de obtener franjas de diferentes colores.
+
 ![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logica.png)
 ## Dificultades y superación de las mismas.
 En un inicio la carga del blaster a la FPGA se hizo desde un computador de escritorio y no fue posible obtener la visualización; posteriormente tras haber revisado cada modificaición del código fue posible determinar que no era un problema del trabajo realizado; posteriormente se hizo la prueba pero ésta vez desde un computador portatil y todo corrió sin problema; es decir se concluye que existe un problema con la instalación de Quartus o alguna de sus extensiones en el primer equipo en el que fue probado.  A continuación se muestra el resultado final de la sección.
