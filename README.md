@@ -117,7 +117,7 @@ Sin embargo al realizar la implementación, se obtuvieron los siguientes resulta
 
 Como es claro a simple inspección, los resultados no son coherentes con los esperados. Tras revisar y corregir el código se evidencia que aunque la lógica era adecuada no era la forma más idónea de implmentarla pues se hacían muchas comparaciones y operaciones en muy poco tiempo haciendo que no existiera sincronización adecuada con el reloj; por lo tanto se procedio con una versión mejorada del código:
 
-![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicadisplay.png)
+![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicaldisplay.png)
 
 En este caso en lugar de realizar comparaciones para aumentar el valor del contador tanto x como en y, se hace uso de la posición tanto x como en y, diviendolas por el factor de escalamiento. De esta forma se logra obtener el resultado deseado, de tener pixeles aumentados de 64x64.
 
