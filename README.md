@@ -103,20 +103,54 @@ A partir del trabajo previamento mostrado y explicado se decidión proceder a ll
 
 ## Lógica de visualización.
 
-Para solventar la decisión de mostrar en toda la pantalla se optó por proponer el uso de "pixeles aumentados"; ésto quiere decir, pintar en un cuadrado de 32 x 32 pixeles la información correspondiente a un solo lugar de memoria; de ésta forma y con el uso de dos registros auxiliares se planteó la lógica correspondiente a través de la cual se obtuevieron los resultados mostrados a continuación.
+Para solventar la decisión de mostrar en toda la pantalla se optó por proponer el uso de "pixeles aumentados"; ésto quiere decir, pintar en un cuadrado de 64 x 64 pixeles la información correspondiente a un solo lugar de memoria; de ésta forma y con el uso de dos registros auxiliares se planteó la lógica correspondiente. A 
+continuación se observa la logica empleada
+![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicaprevia.png)
 
-SI SE QUIERE AQUI PONER LA LOGICA QUE HICIMOS Y NO SIRVIO :,U
+Como se observa en la figura, en este caso se hace la operación modulo para evaluar el cambio de cuadrado, y se hace uso de un if para aumentar el contador en caso de que no se haya superado el borde de la pantalla, si ya se supero se asigna 0. En la dirección de memoria se asigna el valor del pixel correspondiente.
+
+
+Sin embargo al realizar la implementación, se obtuvieron los siguientes resultados:
 
 ![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/ErrorVisualizacion.jpeg)
 
 Como es claro a simple inspección, los resultados no son coherentes con los esperados. Tras revisar y corregir el código se evidencia que aunque la lógica era adecuada no era la forma más idónea de implmentarla pues se hacían muchas comparaciones y operaciones en muy poco tiempo haciendo que no existiera sincronización adecuada con el reloj; por lo tanto se procedio con una versión mejorada del código:
 
-SI SE QUIERE AQUI PONER LA LOGICA QUE EL PROFE AYUDÓ :,U 
+![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicadisplay.png)
+
+En este caso en lugar de realizar comparaciones para aumentar el valor del contador tanto x como en y, se hace uso de la posición tanto x como en y, diviendolas por el factor de escalamiento. De esta forma se logra obtener el resultado deseado, de tener pixeles aumentados de 64x64.
+
 
 Así, se obtiene el resultado correspondiente al propuesto por el grupo como se muestra a continuación.
 
 ![Fig2](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/VisualizacionCorrecta.png)
 
+## Implementación Digital Drawing
+
+Como propuesta de proyecto se decidió realizar un codigo que permita pintar pixel a pixel en la pantalla. Para ello fue necesario implementar una serie de modificaciones al codigo ya descrito previamente. En primera instancia, se necesitaron dos entradas adicionales, una que sera para limpiar la pantalla (clr) y la otra entrada corresponde al color que se debe pintar en pantalla y guardar en memoria (switch). Además en este caso, se usara la pantalla completa pero usando la estrategia de pixeles aumentados que se describio previamente, esto con el fin de no exceder la memoria de la FPGA. 
+
+![Fig6](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas1.png)
+
+En la figura, se observan los cambios implementados en el codigo para lograr este fin.
+
+Ahora se ahondara en la logica que se sigue para realizar el dibujo, en este caso se usa una maquina de estados, que se instancia a partir del archivo FSM_game. En este caso se tiene un reloj, un reset, un clear para limpiar la pizarra y dos botones (in1 y in2). Además es necesario la entrada de la variable switch que indica el color. Finalmente se tienen como salidas la dirección en memoria, la información de dicha dirección y el enable de escritura.
+
+![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas2.png)
+
+Una vez definidas las entradas y las salidas, se realiza la implementación de un reloj propio para la realización del dibujo, que permitira realizar las acciones secuenciales. Con esto se implementa la siguiente logica:
 
 
+Como se observa en la figura, en el caso de que in1 este activo se asigna a la dirección de memoria (addr) el valor de un contador (count) el cual permite el pixel sobre el que se encuentra actualmente. Por otro lado, se implementa un switch case, que a partir de la entrada de los 3 bits que designan el color asigna el color correspondiente a la variable (data).
+
+En el caso de que in2 este activo, este tan solo funciona como un cursor y lo que permite es ir moviendose a través de los pixeles de la pantalla.
+
+En el caso de que clr este activo lo que hace es asignar en la posición actual el valor de 111 que corresponde al color blanco, como si se borrará la pizarra.
+
+Finalmente con el rst se le asigna el valor del 0 al contador y se desactiva la escritura. 
+
+La logica descrita previamente se observa a continuación:
+
+![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicajuego.png)
+
+## Video del proyecto en funcionamiento
 
