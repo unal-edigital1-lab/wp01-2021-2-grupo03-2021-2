@@ -59,6 +59,29 @@ Parte muy importante del laboratorio consistió en adecuar el software de acuerd
 
 Por lo tanto, los cambios reflejados en éste archivo corresponden a la actualización teniendo usando como fuente de consulta la página http://tinyvga.com/vga-timing/1024x768@70Hz tal como fue indicado. 
 
+```Verilog
+
+module test_VGA(
+    input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
+    input wire rst,         	// reset button
+
+	// VGA input/output  
+    output wire VGA_Hsync_n,  // horizontal sync output
+    output wire VGA_Vsync_n,  // vertical sync output
+    output wire VGA_R,	// 4-bit VGA red output
+    output wire VGA_G,  // 4-bit VGA green output
+    output wire VGA_B,  // 4-bit VGA blue output
+    output wire clkout,  
+ 	
+	// input/output
+	
+	
+	input wire bntr,
+	input wire bntl
+		
+);
+```
+
 ## Archivo fuente para almacenamiento de información.
 En el top del proyecto test_VGA se encuentra la instanciación del buffer ram que almacena la representación de pixeles que como grupo decidimos pintar y que obtiene a partir del archivo "image.men". La estrategia de la escritura de éste corresponde al deseo del deseo de dibujar lineas verticales en la pantalla las cuales de izquierda a derecha van, cambiando su color RGB progresivamente y repetetivamente así:
 
