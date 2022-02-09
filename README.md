@@ -134,24 +134,35 @@ Como propuesta de proyecto se decidió realizar un codigo que permita pintar pix
 
 En la figura, se observan los cambios implementados en el codigo para lograr este fin.
 
-Ahora se ahondara en la logica que se sigue para realizar el dibujo, en este caso se usa una maquina de estados, que se instancia a partir del archivo FSM_game. En este caso se tiene un reloj, un reset, un clear para limpiar la pizarra y dos botones (in1 y in2). Además es necesario la entrada de la variable switch que indica el color. Finalmente se tienen como salidas la dirección en memoria, la información de dicha dirección y el enable de escritura.
+Ahora se ahondara en la logica que se sigue para realizar el dibujo, en este caso se usa una maquina de estados, que se instancia a partir del archivo FSM_game. En este caso se tiene un reloj, un reset, un clear para limpiar la pizarra y dos botones (in1 y in2). Además es necesario la entrada de la variable switch que indica el color y un registro adicional blocker que hará las veces de limitador de acciones. Finalmente se tienen como salidas la dirección en memoria, la información de dicha dirección y el enable de escritura.
 
 ![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas2.png)
 
-Una vez definidas las entradas y las salidas, se realiza la implementación de un reloj propio para la realización del dibujo, que permitira realizar las acciones secuenciales. Con esto se implementa la siguiente logica:
+Una vez definidas las entradas y las salidas, se realiza la implementación de un reloj propio para la realización del dibujo que permitiera realizar las acciones de manera secuenciales y controlada. Con esto se implementa la siguiente logica:
 
 
-Como se observa en la figura, en el caso de que in1 este activo se asigna a la dirección de memoria (addr) el valor de un contador (count) el cual permite el pixel sobre el que se encuentra actualmente. Por otro lado, se implementa un switch case, que a partir de la entrada de los 3 bits que designan el color asigna el color correspondiente a la variable (data).
+Como se observa en la figura, en el caso de que in1 este activo se asigna a la dirección de memoria (addr) el valor de un contador (count) el cual permite identificar/cambiar el pixel sobre el que se encuentra actualmente. Por otro lado, se implementa un switch case, que a partir de la entrada de los 3 bits que designan el color asigna el color correspondiente a la variable (data).
 
 En el caso de que in2 este activo, este tan solo funciona como un cursor y lo que permite es ir moviendose a través de los pixeles de la pantalla.
 
-En el caso de que clr este activo lo que hace es asignar en la posición actual el valor de 111 que corresponde al color blanco, como si se borrará la pizarra.
+En el caso de que clr este activo lo que hace es asignar en la posición actual el valor de 111 que corresponde al color blanco, funciona de borrador secuencial automático que hace su función con el reloj del juego (7Hz).
 
-Finalmente con el rst se le asigna el valor del 0 al contador y se desactiva la escritura. 
+Finalmente con el rst se le asigna el valor del 0 al contador y se desactiva la escritura, esto hace que el cursor del motor de dibujo vuelva a la posición inicial (Esquina superior izquierda). 
+
+Fué necesario el uso adicional del registro blocker para que por pulsación, de in1 o in2, se realizara una única vez la acción que desencadena cada uno de los pulsadores según el presionado.
 
 La logica descrita previamente se observa a continuación:
 
 ![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicajuego.png)
 
+Por último, y como preambulo al video, se presentan las instrucciones de uso del motor de dibujo:
+
+![Fig8](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/Instrucciones.png)
+
+y las correspondientes asignaciones establecidas:
+
+![Fig8](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/Asignaciones.png)
+
 ## Video del proyecto en funcionamiento
 
+Se adjunta link del video donde se puede evidenciar el correcto funcionamiento del motor de dibujo, demostrando que su funcionamiento corresponde a las instrucciones definidas: https://youtu.be/yQmHipuTU-8
