@@ -82,7 +82,7 @@ Tambien es necesario asignar las salidas del VGA driver a cada una de las salida
 
 ![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/salidas.png)
 
-Finalmente, se implemento la logica que permite visualizar en la VGA lo que esta en memoria, en este caso la logica usada establece que todo lo que este fuera del tamaño definido sea de color negro. Por otro lado, para usar una menor cantidad de memoria y como se mencionó previamente, solo se guardan en memoria 256 pixeles y lo que se hace para el resto de pixeles es repetir la lectura de la memoria. Esto se logra usando tan solo la variable VGA_posX para indicar la dirección de memoria para la lectura, de esta forma se logra el objetivo de obtener franjas de diferentes colores.
+Finalmente, se implemento la logica que permite visualizar en la VGA lo que esta en memoria, en este caso la logica usada establece que todo lo que este fuera del tamaño definido sea de color negro. Por otro lado, para usar una menor cantidad de memoria y como se mencionó previamente, solo se guardan en memoria 256 pixeles y lo que se hace para el resto de pixeles es repetir la lectura de la memoria. Esto se logra usando tan solo la variable 'VGA_posX' para indicar la dirección de memoria para la lectura, de esta forma se logra el objetivo de obtener franjas de diferentes colores.
 
 ![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logica.png)
 ## Dificultades y superación de las mismas.
