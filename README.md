@@ -356,9 +356,6 @@ Finalmente con el rst se le asigna el valor del 0 al contador y se desactiva la 
 
 Fué necesario el uso adicional del registro blocker para que por pulsación, de in1 o in2, se realizara una única vez la acción que desencadena cada uno de los pulsadores según el presionado.
 
-La logica descrita previamente se observa a continuación:
-
-![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicajuego.png)
 
 Por último, y como preambulo al video, se presentan las instrucciones de uso del motor de dibujo:
 
@@ -370,4 +367,4 @@ y las correspondientes asignaciones establecidas:
 
 ## Video del proyecto en funcionamiento
 
-Se adjunta link del video donde se puede evidenciar el correcto funcionamiento del motor de dibujo, demostrando que su funcionamiento corresponde a las instrucciones definidas: https://youtu.be/yQmHipuTU-8
+Se adjunta link del video donde se puede evidenciar el correcto funcionamiento del motor de dibujo, demostrando que su funcionamiento corresponde a las instrucciones definidas: https://youtu.be/MevZhtsOevw
