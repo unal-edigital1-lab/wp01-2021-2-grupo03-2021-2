@@ -184,9 +184,19 @@ Para solventar la decisión de mostrar en toda la pantalla se optó por proponer
 continuación se observa la logica empleada.
 
 ![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/Estrategia.png)
-
-![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicaprevia.png)
-
+```
+always @ (VGA_posX, VGA_posY) begin
+	
+	if (countX >= width) begin
+	if(VGA_posX % px_scale == px_scale-1) 
+		countx = countx>=width ? 0 : countx + 1;
+		
+	if(VGA_posY % px_scale == px_scale-1) 
+		county = county>=height ? 0 : county + 1;
+	
+	DP_RAM_addr_out = countx + county*width;
+end
+```
 Como se observa en la figura, en este caso se hace la operación modulo para evaluar el cambio de cuadrado, y se hace uso de un if para aumentar el contador en caso de que no se haya superado el borde de la pantalla, si ya se supero se asigna 0. En la dirección de memoria se asigna el valor del pixel correspondiente.
 
 
