@@ -196,7 +196,38 @@ Sin embargo al realizar la implementación, se obtuvieron los siguientes resulta
 
 Como es claro a simple inspección, los resultados no son coherentes con los esperados. Tras revisar y corregir el código se evidencia que aunque la lógica era adecuada no era la forma más idónea de implmentarla pues se hacían muchas comparaciones y operaciones en muy poco tiempo haciendo que no existiera sincronización adecuada con el reloj; por lo tanto se procedio con una versión mejorada del código:
 
-![Fig1](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logicaldisplay.png)
+```
+reg [AW-1:0] countx;
+reg [AW-1:0] county;
+
+localparam px_scale = 64;
+localparam width = CAM_SCREEN_X/px_scale;
+localparam height = CAM_SCREEN_Y/px_scale;
+
+always @ (VGA_posX, VGA_posY) begin
+	
+	if(rst) begin
+		countx=0;
+		county=0;
+	end
+	
+	countx=VGA_posX/px_scale;
+	if(countx>=width) 
+		countx = 0;
+	
+	county=VGA_posY/px_scale;
+	if(county>=height) 
+		county = 0;
+	
+	DP_RAM_addr_out = countx+county*width;
+	
+end
+	
+initial begin
+	countx=0;
+	county=0;
+end
+```
 
 En este caso en lugar de realizar comparaciones para aumentar el valor del contador tanto x como en y, se hace uso de la posición tanto x como en y, diviendolas por el factor de escalamiento. De esta forma se logra obtener el resultado deseado, de tener pixeles aumentados de 64x64.
 
