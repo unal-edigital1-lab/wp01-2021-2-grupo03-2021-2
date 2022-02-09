@@ -145,7 +145,29 @@ En un inicio la carga del blaster a la FPGA se hizo desde un computador de escri
 
 ## Simulación
 Para realizar la simulación, se tuvo en cuenta que la salida es RGB111 por lo tanto, dado que el simulador de Eric Eastwood es RGB322 lo que se hizo fue adicionar los bits adicionales correspondientes teniendo en cuenta que el bit mas signifcativo corresponderia a la salida RGB111, el codigo usado para lo descrito se observa a continuación.
-![Fig3](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/testbench.png)
+```
+	/*************************************************************************
+			INICIO DE  GENERACION DE ARCHIVO test_vga	
+	**************************************************************************/
+
+	/* log para cargar de archivo*/
+	integer f;
+	initial begin
+      f = $fopen("file_test_vga.txt","w");
+   end
+	
+	reg clk_w =0;
+	always #1 clk_w  = ~clk_w;
+
+	initial forever begin
+	@(posedge clk_w)
+	
+		
+		$fwrite(f,"%0t ps: %b %b %b %b %b\n",$time,VGA_Hsync_n, VGA_Vsync_n, {VGA_R,2'b00},{VGA_G,2'b00},{VGA_B,1'b0});
+		$display("%0t ps: %b %b %b %b %b\n",$time,VGA_Hsync_n, VGA_Vsync_n, {VGA_R,2'b00},{VGA_G,2'b00},{VGA_B,1'b0});
+		
+	end
+```
 
 A partir de concatenar la salida RGB111 con los bits adicionales se logra crear el archivo necesario para simular en linea la pantalla VGA. A continuación se muestra el resultado obtenido:
 ![Fig4](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/frame.png)
