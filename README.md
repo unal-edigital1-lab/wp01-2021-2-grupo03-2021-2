@@ -77,16 +77,69 @@ RGB
 La anterior secuencia se contruyó repetitivamente en una representación de 256 líneas, ésto corresponde a que como se planeó pintar lineas no era necesario extenderse en dicha pixel a pixel, si no, mas bien desde la lógica de pixel empleada en la instanciación redirigir la lectura a los valores ya explicados. Vale la pena mencionar que por facilidad la construcción del archivo se hizo en excel y desde ahí se exportó a su forma final que se puede encontrar en la carpeta fuente.
 ## Logica
 A partir del codigo que se tenia, se realizaron los cambios correspondientes para implementarlo en la FPGA. El principal cambio fue en las salidas que son de 1 bit, además se estableció el tamaño de la pantalla con el que se iba trabajar, como se mencionó previamente será de 256x256. Finalmente se calcularon los parametros AW y DW a partir del tamaño de visualización establecido, para de esta forma cumplir con el requerimiento de memoria.
+```
+module test_VGA(
+    input wire clk,           // board clock: 50 MHz
+    input wire rst,         	// reset button
 
-![Fig4](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas.png)
+	// VGA input/output  
+    output wire VGA_Hsync_n,  // horizontal sync output
+    output wire VGA_Vsync_n,  // vertical sync output
+    output wire VGA_R,	// 1-bit VGA red output
+    output wire VGA_G,  // 1-bit VGA green output
+    output wire VGA_B,  // 1-bit VGA blue output
+    output wire clkout,  
+ 	
+	// input/output
+	
+	
+	input wire bntr,
+	input wire bntl
+		
+);
+
+// TAMAÑO DE visualización 
+parameter CAM_SCREEN_X = 256;
+parameter CAM_SCREEN_Y = 256;
+
+localparam AW = 8; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam DW = 3; //Numero de bits RGB
+
+// El color es RGB 111
+localparam RED_VGA =   3'b100;
+localparam GREEN_VGA = 3'b010;
+localparam BLUE_VGA =  3'b001;
+```
 
 Tambien es necesario asignar las salidas del VGA driver a cada una de las salidas designadas para cada color. Dado que el reloj de la pantalla es de 75MHz es necesario implementar un divisor de frecuencia, para aumentar la frecuencia proporcionada por el reloj de la FPGA que es de 50MHz.
+```
+assign VGA_R = data_RGB111[2];
+	assign VGA_G = data_RGB111[1];
+	assign VGA_B = data_RGB111[0];
 
-![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/salidas.png)
+
+
+
+assign clk50M=clk;
+clock75 clk75(	
+	.inclk0(clk50M),
+
+
+divisor_de_frecuencia(
+	.clk(clk75M),
+	.clk_out(clkout)
+);
+```
 
 Finalmente, se implemento la logica que permite visualizar en la VGA lo que esta en memoria, en este caso la logica usada establece que todo lo que este fuera del tamaño definido sea de color negro. Por otro lado, para usar una menor cantidad de memoria y como se mencionó previamente, solo se guardan en memoria 256 pixeles y lo que se hace para el resto de pixeles es repetir la lectura de la memoria. Esto se logra usando tan solo la variable 'VGA_posX' para indicar la dirección de memoria para la lectura, de esta forma se logra el objetivo de obtener franjas de diferentes colores.
-
-![Fig5](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/logica.png)
+```
+always @ (VGA_posX, VGA_posY) begin
+		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
+			DP_RAM_addr_out=0;
+		else
+			DP_RAM_addr_out=VGA_posX;
+end
+```
 ## Dificultades y superación de las mismas.
 En un inicio la carga del blaster a la FPGA se hizo desde un computador de escritorio y no fue posible obtener la visualización; posteriormente tras haber revisado cada modificaición del código fue posible determinar que no era un problema del trabajo realizado; posteriormente se hizo la prueba pero ésta vez desde un computador portatil y todo corrió sin problema; es decir se concluye que existe un problema con la instalación de Quartus o alguna de sus extensiones en el primer equipo en el que fue probado.  A continuación se muestra el resultado final de la sección.
 
