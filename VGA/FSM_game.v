@@ -20,6 +20,7 @@ reg [20:0] count;
 reg [AW:0] addr;
 reg [AW:0] data;
 reg write=0;
+reg blocker;
 
 assign mem_px_addr = addr;
 assign mem_px_data = data;
@@ -33,7 +34,8 @@ divisor_de_frecuencia #(75000000,7) GameClk(
 );
 
 always @ (posedge gameclk) begin
-	if(in1) begin
+	if(in1 && ~blocker) begin
+		blocker=1;
 		addr = count;
 		count = count>=192 ? 0 : count+1;
 		case(switch)
@@ -47,7 +49,8 @@ always @ (posedge gameclk) begin
 			7: data = 3'b111;
 		endcase
 		write=1;
-	end else if(in2) begin
+	end else if(in2 && ~blocker) begin
+		blocker=1;
 		count = count>=192 ? 0 : count+1;
 	end else if(clr) begin
 		addr = count;
@@ -56,6 +59,9 @@ always @ (posedge gameclk) begin
 		write=1;
 	end else
 		write=0;
+		
+	if(~in1 && ~in2)
+		blocker=0;
 		
 	if(rst) begin 
 		count<=0;
