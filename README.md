@@ -239,17 +239,112 @@ Así, se obtiene el resultado correspondiente al propuesto por el grupo como se 
 ## Implementación Digital Drawing
 
 Como propuesta de proyecto se decidió realizar un codigo que permita pintar pixel a pixel en la pantalla. Para ello fue necesario implementar una serie de modificaciones al codigo ya descrito previamente. En primera instancia, se necesitaron dos entradas adicionales, una que sera para limpiar la pantalla (clr) y la otra entrada corresponde al color que se debe pintar en pantalla y guardar en memoria (switch). Además en este caso, se usara la pantalla completa pero usando la estrategia de pixeles aumentados que se describio previamente, esto con el fin de no exceder la memoria de la FPGA. 
+```
+module test_VGA(
+    input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
+    input wire rst,         	// reset button
+	 input wire clr,
+	 input wire [2:0] switch,
+	 
+	// VGA input/output  
+    output wire VGA_Hsync_n,  // horizontal sync output
+    output wire VGA_Vsync_n,  // vertical sync output
+    output wire VGA_R,	// 4-bit VGA red output
+    output wire VGA_G,  // 4-bit VGA green output
+    output wire VGA_B,  // 4-bit VGA blue output
+    output wire clkout,  
+ 	
+	// input/output
+	
+	
+	input wire bntr,
+	input wire bntl
+		
+);
 
-![Fig6](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas1.png)
+// TAMAÑO DE visualización 
+parameter CAM_SCREEN_X = 1024;
+parameter CAM_SCREEN_Y = 768;
+
+localparam AW = 8; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam DW = 3; //Numero de bits RGB
+```
 
 En la figura, se observan los cambios implementados en el codigo para lograr este fin.
 
 Ahora se ahondara en la logica que se sigue para realizar el dibujo, en este caso se usa una maquina de estados, que se instancia a partir del archivo FSM_game. En este caso se tiene un reloj, un reset, un clear para limpiar la pizarra y dos botones (in1 y in2). Además es necesario la entrada de la variable switch que indica el color y un registro adicional blocker que hará las veces de limitador de acciones. Finalmente se tienen como salidas la dirección en memoria, la información de dicha dirección y el enable de escritura.
+```
+module FSM_game #( 
+	parameter AW = 8, // Cantidad de bits  de la direccin 
+	parameter DW = 3 // cantidad de Bits de los datos 
+)(
+	input clk,
+	input rst,
+	input clr, //Limpia pizarra
+	input in1, //Botón right
+	input in2, //Botón left
+	input [DW-1:0] switch,
+	
+	output [AW-1:0] mem_px_addr,
+	output [AW-1:0] mem_px_data,
+	output px_wr
+);
 
-![Fig7](https://github.com/unal-edigital1-lab/wp01-2021-2-grupo03-2021-2/blob/main/figs/entradas2.png)
+reg [20:0] count;
+reg [AW:0] addr;
+reg [AW:0] data;
+reg write=0;
+reg blocker;
 
+assign mem_px_addr = addr;
+assign mem_px_data = data;
+assign px_wr = write;
+
+wire gameclk;
+```
 Una vez definidas las entradas y las salidas, se realiza la implementación de un reloj propio para la realización del dibujo que permitiera realizar las acciones de manera secuenciales y controlada. Con esto se implementa la siguiente logica:
+```
+divisor_de_frecuencia #(75000000,7) GameClk(
+	.clk(clk),
+	.clk_out(gameclk)
+);
 
+always @ (posedge gameclk) begin
+	if(in1 && ~blocker) begin
+		blocker=1;
+		addr = count;
+		count = count>=192 ? 0 : count+1;
+		case(switch)
+			0: data = 3'b000;
+			1: data = 3'b001;
+			2:	data = 3'b010;
+			3:	data = 3'b011;
+			4: data = 3'b100;
+			5: data = 3'b101;
+			6: data = 3'b110;
+			7: data = 3'b111;
+		endcase
+		write=1;
+	end else if(in2 && ~blocker) begin
+		blocker=1;
+		count = count>=192 ? 0 : count+1;
+	end else if(clr) begin
+		addr = count;
+		count = count>=192 ? 0 : count+1;
+		data = 3'b111;
+		write=1;
+	end else
+		write=0;
+		
+	if(~in1 && ~in2)
+		blocker=0;
+		
+	if(rst) begin 
+		count<=0;
+		write<=0;
+	end
+end
+```
 
 Como se observa en la figura, en el caso de que in1 este activo se asigna a la dirección de memoria (addr) el valor de un contador (count) el cual permite identificar/cambiar el pixel sobre el que se encuentra actualmente. Por otro lado, se implementa un switch case, que a partir de la entrada de los 3 bits que designan el color asigna el color correspondiente a la variable (data).
 
